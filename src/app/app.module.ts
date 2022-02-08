@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { TrackComponent } from './track/track.component';
 
 import tracksJSON from './tracks.json'; 
-import { Track } from './app.component';
+// import { Track } from './app.component';
 
-const tracks = tracksJSON.tracks.map(x => <Track>x)
+// const tracks = tracksJSON.tracks.map(x => <Track>x)
 
 @NgModule({
   declarations: [

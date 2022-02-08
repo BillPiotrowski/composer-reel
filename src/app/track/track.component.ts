@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Track } from '../app.component';
+// import { Track } from '../app.component';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Track } from '../playlist.service';
 
 import { PlaylistService } from '../playlist.service';
 

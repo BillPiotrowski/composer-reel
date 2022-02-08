@@ -59,8 +59,8 @@
 
 <nav>
   <ul>
-    <li><a *ngIf="isPrevEnabled" routerLink="{{prevURL}}">Prev</a></li>
-    <li><a *ngIf="isNextEnabled" routerLink="{{nextURL}}">Next</a></li>
+    <li><a *ngIf="playlistService.isPrevTrackEnabled" routerLink="{{playlistService.prevTrackURL}}">Prev</a></li>
+    <li><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
   </ul>
 </nav>
 <!-- 

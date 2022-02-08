@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
 
 import tracksJSON from './tracks.json'; 
-import { Track } from './app.component';
 
 const tracks = tracksJSON.tracks.map(x => <Track>x) 
+
+export interface Track {
+  title: string;
+  url: string;
+  // role: string[]
+  // department_id: number;
+  // permissions_id: number;
+  // maxWorkHours: number;
+  // employee_id: number;
+  // firstname: string;
+  // lastname: string;
+  // username: string;
+  // birthdate: Date;
+  // lastUpdate: Date;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +32,43 @@ export class PlaylistService {
 
   set currentTrackIndex(val: number) {
     this._currentTrackIndex = val
+    this.setNextPrev();
+  }
+  private _isNextTrackEnabled: boolean
+  private _isPrevTrackEnabled: boolean
+
+  get isNextTrackEnabled(): boolean { return this._isNextTrackEnabled}
+  get isPrevTrackEnabled(): boolean { return this._isPrevTrackEnabled}
+
+  constructor() {
+    this._isNextTrackEnabled = getNextTrack(tracks, 0) != null
+    this._isPrevTrackEnabled = getPrevTrack(tracks, 0) != null
   }
 
-  constructor() { }
+
+  setNextPrev() {
+    // const nextURL = this.playlistService.nextTrackURL;
+    // const prevURL = this.playlistService.prevTrackURL;
+
+    // this.nextURL = nextURL
+    // this.prevURL = prevURL
+    this._isNextTrackEnabled = this.nextTrackURL != null;
+    this._isPrevTrackEnabled = this.prevTrackURL != null;
+    
+  }
+
 
   get nextTrackURL(): string | null {
-    return getNextTrackURL(this.tracks, this.currentTrackIndex)
+    return getNextTrackURL(this.tracks, this._currentTrackIndex)
   }
   get prevTrackURL(): string | null {
-    return getPrevTrackURL(this.tracks, this.currentTrackIndex)
+    return getPrevTrackURL(this.tracks, this._currentTrackIndex)
+  }
+  get nextTrack(): Track | null {
+    return getNextTrack(this.tracks, this._currentTrackIndex)
+  }
+  get prevTrack(): Track | null {
+    return getPrevTrack(this.tracks, this._currentTrackIndex)
   }
 
 }
