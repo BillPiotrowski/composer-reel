@@ -1,0 +1,13 @@
+
+    .wrap {
+        background: aqua;
+        /* width: 90%; */
+        position: absolute;
+        z-index: -1;
+        width: 90vw;
+
+    }
+    video {
+        width: 50%;
+        height: 300px;
+    }

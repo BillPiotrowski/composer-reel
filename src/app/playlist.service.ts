@@ -25,12 +25,17 @@ export interface Track {
 export class PlaylistService {
   public tracks = tracks
   private _currentTrackIndex: number = 0
+  private _previousTrackIndex: number | null = null
 
   get currentTrackIndex(): number {
     return this._currentTrackIndex;
   }
+  get previousTrackIndex(): number | null {
+    return this._previousTrackIndex
+  }
 
   set currentTrackIndex(val: number) {
+    this._previousTrackIndex = this.currentTrackIndex
     this._currentTrackIndex = val
     this.setNextPrev();
   }
