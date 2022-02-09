@@ -187,6 +187,16 @@ export class PlaylistService {
 
   }
 
+  recentPageOrAlt(): string {
+    const currentPage = this.tracks[this._currentTrackMasterIndex];
+    if( currentPage.visible ) {
+      return currentPage.url
+    }
+    else {
+      return this.visibleTracks[0].url
+    }
+  }
+
 }
 
 

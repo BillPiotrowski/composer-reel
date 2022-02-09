@@ -16,5 +16,6 @@
     </ul>
     <button (click)="this.playlistService.clearFilter()">Reset</button>
 
-    <button (click)="toggleContainer()">HOME</button>
+    <!-- <button (click)="toggleContainer()">HOME</button> -->
+    <a routerLink="{{this.playlistService.recentPageOrAlt()}}" >HOME</a>
 </div>

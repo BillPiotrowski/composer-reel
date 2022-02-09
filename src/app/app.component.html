@@ -1,11 +1,11 @@
 <div class="container">
   <div class="top">
     <!-- <div id="bg"></div> -->
-
+<!-- 
     <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
       <app-home (toggleVideoEvent)="toggleHome()"></app-home>
     </div>
-
+ -->
 
     <div id="main" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
@@ -16,8 +16,8 @@
         <!-- USE ROUTER LINK ACTIVE?? -->
         <li class="previous"><a routerLinkActive="active" *ngIf="playlistService.isPrevTrackEnabled" routerLink="{{playlistService.prevTrackURL}}">Prev</a></li>
         <li class="next"><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
-        <!-- <li class="home"><a routerLink="/">Home</a></li> -->
-        <li class="home"><button (click)="toggleHome()">HOME</button></li>
+        <li class="home"><a routerLink="/">Home</a></li>
+        <!-- <li class="home"><button (click)="toggleHome()">HOME</button></li> -->
       </ul>
     </nav>
   </div>
