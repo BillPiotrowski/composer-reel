@@ -172,11 +172,19 @@ export class PlaylistService {
   newURL(track: FilterableTrack ){
     const visibleIndex = this.visibleTracks.findIndex(x => x == track);
     if (visibleIndex > -1) {
-      console.log("MATCH 2?")
-      console.log(visibleIndex)
+      // console.log("MATCH 2?")
+      // console.log(visibleIndex)
       this.currentTrackIndex = visibleIndex;
       // this._currentTrackIndex = visibleIndex;
     }
+    const index = this.tracks.findIndex(x => x == track);
+    if (index > -1) {
+      console.log("MATCH 3?")
+      console.log(index)
+      this._currentTrackMasterIndex = index;
+      // this._currentTrackIndex = visibleIndex;
+    }
+
   }
 
 }

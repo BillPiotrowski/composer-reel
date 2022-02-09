@@ -107,7 +107,29 @@ import { animation, stagger, useAnimation, query, group, animateChild, sequence 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-    slideInAnimation
+    slideInAnimation,
+
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        top: '0%',
+        // height: '200px',
+        // opacity: 1,
+        // backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        top: '-100%',
+        // height: '100px',
+        // opacity: 0.8,
+        // backgroundColor: 'blue'
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ])
     // trigger('routeAnimations', [
     //   transition('* => LeftToTrack', fadeIn),
     //   transition('TrackPage => Home', fadeIn)
@@ -120,7 +142,7 @@ import { animation, stagger, useAnimation, query, group, animateChild, sequence 
 export class AppComponent {
   title = 'composer-reel';
   masterTracks: Track[]
-  
+  isOpen = false;
 
   constructor(
     private router: Router,
@@ -150,6 +172,7 @@ export class AppComponent {
 
     this.router.events.subscribe( (e) => {
       if (e instanceof NavigationStart) {
+        // if (this.isOpen) { this.isOpen = false }
         console.log("NEW TRACK:")
         console.log(e.url)
         const trackURL = this.playlistService.tracks.find(
@@ -176,6 +199,12 @@ export class AppComponent {
       }
     })
 
+  }
+
+
+  toggleHome(){
+    this.isOpen = !this.isOpen
+    // if (!this.isOpen && )
   }
   // prepareRouteTransition(outlet: RouterOutlet): string | null {
   //   try {

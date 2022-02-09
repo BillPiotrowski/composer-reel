@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from '../playlist.service';
 import { tagFilters } from '../playlist.service';
+import { Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,8 @@ import { tagFilters } from '../playlist.service';
 })
 export class HomeComponent implements OnInit {
 
+  @Output() toggleVideoEvent = new EventEmitter<void>();
+
   constructor(
     public playlistService: PlaylistService,
   ) {
@@ -16,6 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  toggleContainer(){
+    this.toggleVideoEvent.emit()
   }
 
 
