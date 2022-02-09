@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouteReuseStrategy, RouterModule } from '@angular/router';
+import { Route, Router, RouteReuseStrategy, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,24 +19,12 @@ import { HomeComponent } from './home/home.component';
 export const masterTracks = tracksJSON.tracks.map(x => <Track>x)
 
 // Is parentheses required in definition?
-const routes: ({
-  path: string;
-  component: typeof TrackComponent;
-  data: {};
-  redirectTo?: undefined;
-  pathMatch?: undefined;
-} | {
-  path: string;
-  redirectTo: string;
-  pathMatch: string;
-  component?: undefined;
-  data?: undefined;
-})[] = [
-  { path: '', component: TrackComponent, data: {animation: 'FilterPage'}  }
+const routes: Route[] = [
+  { path: '', component: HomeComponent, data: {animation: 'FilterPage'}  }
 ]
 
-const trackRoutes = tracksJSON.tracks.map(x => <Track>x).flatMap(x => [
-  { path: x.url, component: TrackComponent, data: {animation: 'FilterPage'}  },
+const trackRoutes: Route[] = tracksJSON.tracks.map(x => <Track>x).flatMap(x => [
+  { path: x.url, component: TrackComponent, data: {}  },
   { path: '',   redirectTo: '/'+x.url, pathMatch: 'full' },
 ])
 
@@ -66,20 +54,20 @@ const trackRoutes = tracksJSON.tracks.map(x => <Track>x).flatMap(x => [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // RouterModule.forRoot(routes.concat(trackRoutes), {scrollPositionRestoration: 'enabled'}),
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, data: {animation: 'Home'}  },
-      // { path: '',   redirectTo: '/', pathMatch: 'full' },
-      { path: 'grey-cardinal', component: TrackComponent, data: {}  },
-      { path: '',   redirectTo: '/grey-cardinal', pathMatch: 'full' },
-      { path: 'lonesome-town', component: TrackComponent, data: {}  },
-      { path: '',   redirectTo: '/lonesome-town', pathMatch: 'full' },
-      { path: 'the-lion-rises', component: TrackComponent, data: {}  },
-      { path: '',   redirectTo: '/the-lion-rises', pathMatch: 'full' },
-      { path: 'traintracks', component: TrackComponent, data: {}  },
-      { path: '',   redirectTo: '/traintracks', pathMatch: 'full' },
+    RouterModule.forRoot(routes.concat(trackRoutes), {scrollPositionRestoration: 'enabled'}),
+    // RouterModule.forRoot([
+    //   { path: '', component: HomeComponent, data: {animation: 'Home'}  },
+    //   // { path: '',   redirectTo: '/', pathMatch: 'full' },
+    //   { path: 'grey-cardinal', component: TrackComponent, data: {}  },
+    //   { path: '',   redirectTo: '/grey-cardinal', pathMatch: 'full' },
+    //   { path: 'lonesome-town', component: TrackComponent, data: {}  },
+    //   { path: '',   redirectTo: '/lonesome-town', pathMatch: 'full' },
+    //   { path: 'the-lion-rises', component: TrackComponent, data: {}  },
+    //   { path: '',   redirectTo: '/the-lion-rises', pathMatch: 'full' },
+    //   { path: 'traintracks', component: TrackComponent, data: {}  },
+    //   { path: '',   redirectTo: '/traintracks', pathMatch: 'full' },
 
-    ], {scrollPositionRestoration: 'enabled'}),
+    // ], {scrollPositionRestoration: 'enabled'}),
   ],
   providers: [/*{provide: RouteReuseStrategy, useClass: CustomStrategy}*/],
   bootstrap: [AppComponent]

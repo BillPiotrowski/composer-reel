@@ -3,22 +3,86 @@
         {
             "title": "Grey Cardinal",
             "url": "grey-cardinal",
-            "tags": ["collage"]
+            "tags": ["collage"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
         },
         {
             "title": "Lonesome Town",
             "url": "lonesome-town",
-            "tags": ["collage"]
+            "tags": ["collage"],
+            "description": "first line\nsecond line",
+            "videoFileName": "lonesome-town.mp4"
+        },
+        {
+            "title": "Memory",
+            "url": "memory",
+            "tags": ["ondes"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
         },
         {
             "title": "The Lion Rises",
             "url": "the-lion-rises",
-            "tags": ["filmScore"]
+            "tags": ["filmScore", "orchestral"],
+            "description": "first line\nsecond line",
+            "videoFileName": "lion-rises.mp4"
         },
         {
             "title": "Train Tracks and Paintbrushes",
             "url": "traintracks",
-            "tags": ["filmScore"]
+            "tags": ["filmScore"],
+            "description": "first line\nsecond line",
+            "videoFileName": "trains.mp4"
+        },
+        {
+            "title": "Highway",
+            "url": "highway",
+            "tags": ["filmScore"],
+            "description": "first line\nsecond line",
+            "videoFileName": "highway.mp4"
+        },
+        {
+            "title": "Track",
+            "url": "track",
+            "tags": ["filmScore"],
+            "description": "first line\nsecond line",
+            "videoFileName": "track.mp4"
+        },
+        {
+            "title": "Night of the Wolf",
+            "url": "night-of-the-wolf",
+            "tags": ["orchestral"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
+        },
+        {
+            "title": "Labyrinth of Dreams",
+            "url": "labyrinth-of-dreams",
+            "tags": ["orchestral"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
+        },
+        {
+            "title": "Song for the Ride",
+            "url": "song-for-the-ride",
+            "tags": ["collage"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
+        },
+        {
+            "title": "Ritual",
+            "url": "ritual",
+            "tags": ["collage"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
+        },
+        {
+            "title": "Waves Controlling Waves",
+            "url": "waves",
+            "tags": ["ondes"],
+            "description": "first line\nsecond line",
+            "videoFileName": "grey-cardinal.mp4"
         }
     ]
 }

@@ -5,10 +5,6 @@ enum TrackTag {
   }
   
   
-  export const tagFilters: TagFilter[] = [
-    {title: "Collage", tag: "collage", enabled: false },
-    {title: "Film Score", tag: "filmScore", enabled: false }
-  ]
   
   export interface TagFilter {
     title: string;

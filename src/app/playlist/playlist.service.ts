@@ -2,9 +2,15 @@ import { Injectable } from '@angular/core';
 
 import tracksJSON from './../tracks.json'; 
 import { Track, FilterableTrack } from './track';
-import { TagFilter, tagFilters } from './filter';
+import { TagFilter } from './filter';
 
 
+export const tagFilters: TagFilter[] = [
+  {title: "Collage", tag: "collage", enabled: false },
+  {title: "Film Score", tag: "filmScore", enabled: false },
+  {title: "Orchestral Samples", tag: "orchestral", enabled: false },
+  {title: "Ondes Martenot", tag: "ondes", enabled: false }
+]
 
 const tracks = tracksJSON.tracks.map(x => <Track>x) 
 

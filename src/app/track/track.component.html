@@ -3,4 +3,9 @@
 
 <div class="wrap">
     <h1>{{track.title}}</h1>
+    <p>{{track.description}}</p>
+    <ul class="tags">
+        <li *ngFor="let tag of track.tagClasses">{{tag.title}}</li>
+    </ul>
+    <video controls src="{{track.videoURL}}"></video>
 </div>

@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { Track } from '../playlist/track';
+import { FilterableTrack, Track } from '../playlist/track';
 
 import { PlaylistService } from '../playlist/playlist.service';
 
@@ -15,7 +15,7 @@ import { PlaylistService } from '../playlist/playlist.service';
 })
 export class TrackComponent implements OnInit {
   
-  track: Track
+  track: FilterableTrack
 
   public constructor(private playlistService: PlaylistService, private router:Router/*, private route:ActivatedRoute, */) {
     // console.log(route.snapshot.data['test']);

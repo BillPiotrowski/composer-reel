@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlaylistService } from '../playlist/playlist.service';
-import { tagFilters } from '../playlist/filter';
+import { PlaylistService, tagFilters } from '../playlist/playlist.service';
 import { Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
