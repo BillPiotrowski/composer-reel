@@ -14,18 +14,38 @@ const tracks = tracksJSON.tracks.map(x => <Track>x)
 })
 export class PlaylistService {
   public tracks: FilterableTrack[]
-  // private _currentTrackIndex: number
-  // the index of the current track from master track list regardless of filter.
   private _currentTrackMasterIndex: number
   private _previousTrackMasterIndex: number | null = null
+  private _filters: TagFilter[] = tagFilters
+  private _isNextTrackEnabled: boolean
+  private _isPrevTrackEnabled: boolean
+
+
+
+
+
+
+
+  constructor() {
+    const filterableTracks = tracks.map(x=> new FilterableTrack(x, true))
+    this.tracks = filterableTracks;
+    this._isNextTrackEnabled = getNextTrack(filterableTracks, 0) != null;
+    this._isPrevTrackEnabled = getPrevTrack(filterableTracks, 0) != null;
+    this._currentTrackMasterIndex = 0;
+  }
+
+
+
+
+
+// --------------------------------- STATE PROPERTIES ---------------
+
 
   private set currentTrackMasterIndex(val: number) {
     this._previousTrackMasterIndex = this.currentTrackIndex
     this._currentTrackMasterIndex = val
     this.setNextPrev();
   }
-  // private _previousTrackIndex: number | null = null
-  private _filters: TagFilter[] = tagFilters
 
   get visibleTracks(): FilterableTrack[] {
     return this.tracks.filter(x=> x.visible)
@@ -42,29 +62,27 @@ export class PlaylistService {
     }
     return null
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // -------------------------- FILTERS --------------------------
+
+
   get filters(): TagFilter[] {
     return this._filters
-  }
-
-  private set currentTrackIndex(val: number) {
-    // this._previousTrackIndex = this.currentTrackIndex
-    // this._currentTrackIndex = val
-    // this.setNextPrev();
-  }
-  private _isNextTrackEnabled: boolean
-  private _isPrevTrackEnabled: boolean
-
-  get isNextTrackEnabled(): boolean { return this._isNextTrackEnabled}
-  get isPrevTrackEnabled(): boolean { return this._isPrevTrackEnabled}
-
-  constructor() {
-    const filterableTracks = tracks.map(x=> new FilterableTrack(x, true))
-    this.tracks = filterableTracks;
-    this._isNextTrackEnabled = getNextTrack(filterableTracks, 0) != null;
-    this._isPrevTrackEnabled = getPrevTrack(filterableTracks, 0) != null;
-    this._currentTrackMasterIndex = 0;
-    // this._currentTrackIndex = 0;
-    // this._filters = tagFilters;
   }
 
   toggleFilter(filterTag: string){
@@ -82,14 +100,11 @@ export class PlaylistService {
 
   private applyFilters(){
     if (this.enabledFilters.length < 1){
-      // this.tracks = tracks.map(x=> new FilterableTrack(x, true));
       for (var track of this.tracks ){
         track.visible = true;
       }
-      // console.log("NO FILT")
       return
     }
-    // const filteredTracks: Track[] = []
     for (var track of this.tracks){
       track.visible = false;
       for (var filter of this.enabledFilters) {
@@ -100,12 +115,7 @@ export class PlaylistService {
         // else {  }
       }
     }
-    console.log(this.tracks);
-    // console.log(filteredTracks);
-    // this.tracks = filteredTracks;
   }
-
-  
 
   clearFilter(){
     for (var filter of this._filters){
@@ -117,19 +127,25 @@ export class PlaylistService {
   }
 
 
+  
+
+
+
+
+
+
+
+
+  // ----------------- NEXT / PREV FUNCTIONS ------------------------------
+
   setNextPrev() {
-    // console.log("next tracks here!")
-    // const nextTracks = this.visibleTracks.slice(this._currentTrackIndex + 1);
-    // console.log(nextTracks)
-    // console.log("STILL HERE")
     this._isNextTrackEnabled = this.nextTrackURL != null;
-    // console.log("STILL HERE 2")
-    // console.log("SET PREV TRACK ENABLED: " + (this.prevTrackURL != null))
     this._isPrevTrackEnabled = this.prevTrackURL != null;
     
   }
 
-
+  get isNextTrackEnabled(): boolean { return this._isNextTrackEnabled}
+  get isPrevTrackEnabled(): boolean { return this._isPrevTrackEnabled}
   get nextTrackURL(): string | null {
     return getNextTrackURL(this.tracks, this._currentTrackMasterIndex)
   }
@@ -143,29 +159,22 @@ export class PlaylistService {
     return getPrevTrack(this.tracks, this._currentTrackMasterIndex)
   }
 
-  newURL(track: FilterableTrack ){
-    console.log("NEW URL: "+ track)
-    console.log("__________________________________________")
 
+
+
+
+
+
+
+  // Updates playlist based on new URL information
+  newURL(track: FilterableTrack ){
     const index = this.tracks.findIndex(x => x == track);
     if (index > -1) {
-      // console.log("MATCH 3?")
-      // console.log(index)
       this.currentTrackMasterIndex = index;
-      // this._currentTrackIndex = visibleIndex;
     }
-
-
-    // const visibleIndex = this.visibleTracks.findIndex(x => x == track);
-    // if (visibleIndex > -1) {
-    //   // console.log("MATCH 2?")
-    //   // console.log(visibleIndex)
-    //   this.currentTrackIndex = visibleIndex;
-    //   // this._currentTrackIndex = visibleIndex;
-    // }
-
   }
 
+  // Returns the current page if it is visible (allowed by filters). If not, it returns the first index allowed by filter.
   recentPageOrAlt(): string {
     const currentPage = this.tracks[this._currentTrackMasterIndex];
     if( currentPage.visible ) {
@@ -179,9 +188,19 @@ export class PlaylistService {
 }
 
 
-function addTrackIfDoesNotExist(tracks: Track[], track: Track){
 
-}
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------- HELPER METHODS ---------------------------------
 
 
 function getNextTrackURL(tracks: FilterableTrack[], currentIndex: number): string | null {
