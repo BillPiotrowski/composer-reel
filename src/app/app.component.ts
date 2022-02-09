@@ -173,17 +173,17 @@ export class AppComponent {
     this.router.events.subscribe( (e) => {
       if (e instanceof NavigationStart) {
         // if (this.isOpen) { this.isOpen = false }
-        console.log("NEW TRACK:")
-        console.log(e.url)
+        // console.log("NEW TRACK:")
+        // console.log(e.url)
         const trackURL = this.playlistService.tracks.find(
           x => { 
-            console.log(x.url);
+            // console.log(x.url);
             return ('/' + x.url) == e.url
           }
         )
         if (trackURL){
-          console.log("MATCH?")
-          console.log(trackURL)
+          // console.log("MATCH?")
+          // console.log(trackURL)
           this.playlistService.newURL(trackURL);
         }
         // const newIndex = this.playlistService.visibleTracks.findIndex((x) => { 
@@ -221,8 +221,9 @@ export class AppComponent {
     }
 
     const previousTrackIndex = this.playlistService.previousTrackIndex
+    console.log("PREVIOUS TRACK NULL!" + previousTrackIndex + " NEW: " + this.playlistService.currentTrackIndex)
     if (previousTrackIndex != null){
-      if (this.playlistService.currentTrackIndex > previousTrackIndex) {
+      if (this.playlistService.currentTrackIndex >= previousTrackIndex) {
         const trans = "LeftTo" + this.playlistService.tracks[this.playlistService.currentTrackIndex].url
         console.log(trans)
         return trans
