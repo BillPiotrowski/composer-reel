@@ -59,6 +59,10 @@ export class PlaylistService {
   private _previousTrackIndex: number | null = null
   private _filters: TagFilter[] = tagFilters
 
+  get visibleTracks(): FilterableTrack[] {
+    return this.tracks.filter(x=> x.visible)
+  }
+
   get currentTrackIndex(): number {
     return this._currentTrackIndex;
   }
@@ -130,7 +134,12 @@ export class PlaylistService {
   
 
   clearFilter(){
-    this._filters = []
+    for (var filter of this._filters){
+      filter.enabled = false;
+    }
+    for (var track of this.tracks ){
+      track.visible = true;
+    }
   }
 
 
@@ -142,16 +151,16 @@ export class PlaylistService {
 
 
   get nextTrackURL(): string | null {
-    return getNextTrackURL(this.tracks, this._currentTrackIndex)
+    return getNextTrackURL(this.visibleTracks, this._currentTrackIndex)
   }
   get prevTrackURL(): string | null {
-    return getPrevTrackURL(this.tracks, this._currentTrackIndex)
+    return getPrevTrackURL(this.visibleTracks, this._currentTrackIndex)
   }
   get nextTrack(): FilterableTrack | null {
-    return getNextTrack(this.tracks, this._currentTrackIndex)
+    return getNextTrack(this.visibleTracks, this._currentTrackIndex)
   }
   get prevTrack(): FilterableTrack | null {
-    return getPrevTrack(this.tracks, this._currentTrackIndex)
+    return getPrevTrack(this.visibleTracks, this._currentTrackIndex)
   }
 
 }

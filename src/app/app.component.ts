@@ -150,7 +150,7 @@ export class AppComponent {
 
     this.router.events.subscribe( (e) => {
       if (e instanceof NavigationStart) {
-        const newIndex = this.masterTracks.findIndex((x) => { 
+        const newIndex = this.playlistService.visibleTracks.findIndex((x) => { 
           return ('/' + x.url) == e.url 
         } )
         if (newIndex > -1){
