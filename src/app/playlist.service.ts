@@ -56,6 +56,8 @@ export interface TagFilter {
 export class PlaylistService {
   public tracks: FilterableTrack[]
   private _currentTrackIndex: number
+  // the index of the current track from master track list regardless of filter.
+  private _currentTrackMasterIndex: number
   private _previousTrackIndex: number | null = null
   private _filters: TagFilter[] = tagFilters
 
@@ -90,6 +92,7 @@ export class PlaylistService {
     this._isNextTrackEnabled = getNextTrack(filterableTracks, 0) != null;
     this._isPrevTrackEnabled = getPrevTrack(filterableTracks, 0) != null;
     this._currentTrackIndex = 0;
+    this._currentTrackMasterIndex = 0;
     // this._filters = tagFilters;
   }
 
@@ -144,6 +147,9 @@ export class PlaylistService {
 
 
   setNextPrev() {
+    console.log("next tracks")
+    const nextTracks = this.visibleTracks.slice(this._currentTrackIndex + 1);
+    console.log(nextTracks)
     this._isNextTrackEnabled = this.nextTrackURL != null;
     this._isPrevTrackEnabled = this.prevTrackURL != null;
     
@@ -161,6 +167,16 @@ export class PlaylistService {
   }
   get prevTrack(): FilterableTrack | null {
     return getPrevTrack(this.visibleTracks, this._currentTrackIndex)
+  }
+
+  newURL(track: FilterableTrack ){
+    const visibleIndex = this.visibleTracks.findIndex(x => x == track);
+    if (visibleIndex > -1) {
+      console.log("MATCH 2?")
+      console.log(visibleIndex)
+      this.currentTrackIndex = visibleIndex;
+      // this._currentTrackIndex = visibleIndex;
+    }
   }
 
 }

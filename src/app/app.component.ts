@@ -150,15 +150,28 @@ export class AppComponent {
 
     this.router.events.subscribe( (e) => {
       if (e instanceof NavigationStart) {
-        const newIndex = this.playlistService.visibleTracks.findIndex((x) => { 
-          return ('/' + x.url) == e.url 
-        } )
-        if (newIndex > -1){
-          console.log("NEW INDEX!!!!")
-          this.playlistService.currentTrackIndex = newIndex
-          // this.currentTrackIndex = newIndex;
-          // this.setNextPrev();
+        console.log("NEW TRACK:")
+        console.log(e.url)
+        const trackURL = this.playlistService.tracks.find(
+          x => { 
+            console.log(x.url);
+            return ('/' + x.url) == e.url
+          }
+        )
+        if (trackURL){
+          console.log("MATCH?")
+          console.log(trackURL)
+          this.playlistService.newURL(trackURL);
         }
+        // const newIndex = this.playlistService.visibleTracks.findIndex((x) => { 
+        //   return ('/' + x.url) == e.url 
+        // } )
+        // if (newIndex > -1){
+        //   console.log("NEW INDEX!!!!")
+        //   this.playlistService.currentTrackIndex = newIndex
+        //   // this.currentTrackIndex = newIndex;
+        //   // this.setNextPrev();
+        // }
 
       }
     })
