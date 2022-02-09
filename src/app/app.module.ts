@@ -70,13 +70,13 @@ const trackRoutes = tracksJSON.tracks.map(x => <Track>x).flatMap(x => [
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: {animation: 'Home'}  },
       // { path: '',   redirectTo: '/', pathMatch: 'full' },
-      { path: 'grey-cardinal', component: TrackComponent, data: {animation: 'GreyCard'}  },
+      { path: 'grey-cardinal', component: TrackComponent, data: {}  },
       { path: '',   redirectTo: '/grey-cardinal', pathMatch: 'full' },
-      { path: 'lonesome-town', component: TrackComponent, data: {animation: 'Lonesome'}  },
+      { path: 'lonesome-town', component: TrackComponent, data: {}  },
       { path: '',   redirectTo: '/lonesome-town', pathMatch: 'full' },
-      { path: 'the-lion-rises', component: TrackComponent, data: {animation: 'LionRises'}  },
+      { path: 'the-lion-rises', component: TrackComponent, data: {}  },
       { path: '',   redirectTo: '/the-lion-rises', pathMatch: 'full' },
-      { path: 'traintracks', component: TrackComponent, data: {animation: 'Traintracks'}  },
+      { path: 'traintracks', component: TrackComponent, data: {}  },
       { path: '',   redirectTo: '/traintracks', pathMatch: 'full' },
 
     ], {scrollPositionRestoration: 'enabled'}),

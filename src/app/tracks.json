@@ -2,19 +2,23 @@
     "tracks": [
         {
             "title": "Grey Cardinal",
-            "url": "grey-cardinal"
+            "url": "grey-cardinal",
+            "tags": ["collage"]
         },
         {
             "title": "Lonesome Town",
-            "url": "lonesome-town"
+            "url": "lonesome-town",
+            "tags": ["collage"]
         },
         {
             "title": "The Lion Rises",
-            "url": "the-lion-rises"
+            "url": "the-lion-rises",
+            "tags": ["filmScore"]
         },
         {
             "title": "Train Tracks and Paintbrushes",
-            "url": "traintracks"
+            "url": "traintracks",
+            "tags": ["filmScore"]
         }
     ]
 }

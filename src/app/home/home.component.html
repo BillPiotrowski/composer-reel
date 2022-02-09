@@ -1,1 +1,17 @@
-<p>home works!</p>
+<style>
+    .singleClass {
+        color: lime;
+    }
+</style>
+<div class="wrap">
+    <h3>All Demos</h3>
+    <ul>
+        <li *ngFor="let track of playlistService.tracks">
+            <a routerLink="{{track.url}}" [ngClass]="{'singleClass' : track.visible}" >{{track.title}}</a>
+         </li>
+    </ul>
+    <h3>Filters</h3>
+    <ul>
+        <li *ngFor="let filter of playlistService.filters"><button (click)="this.playlistService.toggleFilter(filter.tag)">{{filter.title}}</button></li>
+    </ul>
+</div>

@@ -1,41 +1,32 @@
+<div class="container">
+  <div class="top">
+    <!-- <div id="bg"></div> -->
 
-<div id="bg"></div>
+    <div id="main" [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+    
+    <nav id="transport">
+      <ul>
+        <!-- USE ROUTER LINK ACTIVE?? -->
+        <li class="previous"><a routerLinkActive="active" *ngIf="playlistService.isPrevTrackEnabled" routerLink="{{playlistService.prevTrackURL}}">Prev</a></li>
+        <li class="next"><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
+        <li class="home"><a routerLink="/">Home</a></li>
+      </ul>
+    </nav>
+  </div>
 
+  
+  
+</div>
+  
 <header id="contactInfo">
   William R Piotrowski <br />
   1754 1⁄2 Lucretia Ave Los Angeles, CA 90026 <br />
   216.287.6815 <br />
   billpiotrowski@me.com
 </header>
-<!-- <nav>
-  <h2>Filters</h2>
-  <ul>
-    <li><a href="#">film score</a></li>
-    <li><a href="#">collage</a></li>
-    <li><a href="#">orchestral samples</a></li>
-    <li><a href="#">multi-media</a></li>
-    <li><a href="#">Ondes</a></li>
-  </ul>
-</nav> -->
 
-<style>
-</style>
-
-<!-- <div id ="main" > -->
-  
-  <div id="main" [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
-  </div>
-<!-- </div> -->
-
-<nav>
-  <ul>
-    <!-- USE ROUTER LINK ACTIVE?? -->
-    <li><a routerLinkActive="active" *ngIf="playlistService.isPrevTrackEnabled" routerLink="{{playlistService.prevTrackURL}}">Prev</a></li>
-    <li><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
-    <li><a routerLink="/">Home</a></li>
-  </ul>
-</nav>
 <!-- 
 <main>
 

@@ -1,6 +1,6 @@
 
     .wrap {
-        background: aqua;
+        padding: 80px 120px;
         /* width: 90%; */
         position: absolute;
         z-index: -1;

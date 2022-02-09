@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaylistService } from '../playlist.service';
+import { tagFilters } from '../playlist.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public playlistService: PlaylistService,
+  ) {
+
+  }
 
   ngOnInit(): void {
   }
+
 
 }

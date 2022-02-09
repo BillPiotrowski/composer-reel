@@ -70,56 +70,38 @@ const transToRight = [
 
 export const slideInAnimation =
   trigger('routeAnimations', [
-    transition(leftToString, transToLeft ),
-    transition(rightToString, transToRight ),
-    transition('* => *', [
-      style({ position: 'absolute' }),
-      query(':enter, :leave', [
+    transition('* => Home', [
+      query(':enter', [
         style({
           position: 'absolute',
-          top: '1200px',
+          top: "-100%",
           left: 0,
+          height: '100%',
           width: '100%',
-          opacity: 0,
-          background: 'yellow'
         })
       ]),
-      query(':enter', [
-        style({ left: '-100%' })
-      ]),
       query(':leave', animateChild()),
-      group([
-        query(':leave', [
-          animate('3000ms ease-out', style({ left: '100%' }))
-        ]),
         query(':enter', [
-          animate('3000ms ease-out', style({ left: '0%' }))
-        ])
-      ]),
+          animate('600ms ease-out', style({ top: '0%' }))
+        ]),
       query(':enter', animateChild()),
     ]),
-    // transition('* <=> FilterPage', [
-    //   style({ position: 'relative' }),
-    //   query(':enter, :leave', [
-    //     style({
-    //       position: 'absolute',
-    //       top: 0,
-    //       left: 0,
-    //       width: '100%'
-    //     })
-    //   ]),
-    //   query(':enter', [
-    //     style({ left: '-100%' })
-    //   ]),
-    //   query(':leave', animateChild()),
-    //   group([
-    //     query(':leave', [
-    //       animate('200ms ease-out', style({ left: '100%' }))
-    //     ]),
-    //     query(':enter', [
-    //       animate('300ms ease-out', style({ left: '0%' }))
-    //     ])
-    //   ]),
-    //   query(':enter', animateChild()),
-    // ])
+    transition('Home => *', [
+      query(':leave', [
+        style({
+          position: 'absolute',
+          top: "0",
+          left: 0,
+          height: '100%',
+          width: '100%',
+        })
+      ]),
+      query(':leave', animateChild()),
+        query(':leave', [
+          animate('600ms ease-out', style({ top: '-100%' }))
+        ]),
+      query(':enter', animateChild()),
+    ]),
+    transition(leftToString, transToLeft ),
+    transition(rightToString, transToRight ),
   ]);

@@ -173,6 +173,11 @@ export class AppComponent {
 	// }
 
   prepareRoute(outlet: RouterOutlet) {
+    const explicitAnimation = outlet?.activatedRouteData?.['animation']
+    if (explicitAnimation != null) {
+      return explicitAnimation
+    }
+
     const previousTrackIndex = this.playlistService.previousTrackIndex
     if (previousTrackIndex != null){
       if (this.playlistService.currentTrackIndex > previousTrackIndex) {
