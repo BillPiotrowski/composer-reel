@@ -2,7 +2,7 @@ import { animation, style, animate, trigger, transition, stagger, useAnimation, 
 
 import tracksJSON from './tracks.json'; 
 // import { Track } from './app.component';
-import { Track } from './playlist.service';
+import { Track } from './playlist/track';
 // const tracks = tracksJSON.tracks.map(x => <Track>x)
 
 

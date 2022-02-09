@@ -1,54 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import tracksJSON from './tracks.json'; 
+import tracksJSON from './../tracks.json'; 
+import { Track, FilterableTrack } from './track';
+import { TagFilter, tagFilters } from './filter';
+
+
 
 const tracks = tracksJSON.tracks.map(x => <Track>x) 
 
-export interface Track {
-  title: string;
-  url: string;
-  tags: string[]
-}
-
-enum TrackTag {
-  collage = "Collage",
-  filmScore = "Film Score",
-}
-
-export class FilterableTrack {
-  private track: Track
-  visible: boolean
-
-  constructor(
-    track: Track,
-    visible: boolean | undefined = true
-  ){
-    this.track = track
-    this.visible = visible
-  }
-
-  get title(): string {
-    return this.track.title
-  }
-  get tags(): string[] {
-    return this.track.tags
-  }
-
-  get url(): string {
-    return this.track.url
-  }
-}
-
-export const tagFilters: TagFilter[] = [
-  {title: "Collage", tag: "collage", enabled: false },
-  {title: "Film Score", tag: "filmScore", enabled: false }
-]
-
-export interface TagFilter {
-  title: string;
-  tag: string;
-  enabled: boolean;
-}
 
 @Injectable({
   providedIn: 'root'

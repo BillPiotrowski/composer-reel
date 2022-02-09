@@ -11,7 +11,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, DetachedRouteHandle } from '@an
 // Better way to pull from playlist??
 import tracksJSON from './tracks.json'; 
 // import { Track } from './app.component';
-import { Track } from './playlist.service';
+import { Track } from './playlist/track';
 import { HomeComponent } from './home/home.component';
 // const tracks = tracksJSON.tracks.map(x => <Track>x)
 

@@ -20,7 +20,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, DetachedRouteHandle } from '@an
 // import { Component, Injectable } from '@angular/core';
 // import { Router, Event, NavigationStart, RouterOutlet, ActivationEnd, ActivationStart, NavigationEnd } from '@angular/router';
 import { Injector } from '@angular/core';
-import { PlaylistService } from './playlist.service';
+import { PlaylistService } from './playlist/playlist.service';
 
 // import { animation, style, animate, trigger, transition, stagger, useAnimation, query, group, animateChild, sequence } from '@angular/animations';
 // import { slideInAnimation } from './animations';
@@ -30,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import tracksJSON from './tracks.json'; 
 
-import { Track } from './playlist.service';
+import { Track } from './playlist/track';
 import { animation, stagger, useAnimation, query, group, animateChild, sequence } from '@angular/animations';
 
 

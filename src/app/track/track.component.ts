@@ -3,9 +3,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { Track } from '../playlist.service';
+import { Track } from '../playlist/track';
 
-import { PlaylistService } from '../playlist.service';
+import { PlaylistService } from '../playlist/playlist.service';
 
 
 @Component({
