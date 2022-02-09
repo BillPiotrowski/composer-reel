@@ -91,8 +91,8 @@ export class PlaylistService {
     this.tracks = filterableTracks;
     this._isNextTrackEnabled = getNextTrack(filterableTracks, 0) != null;
     this._isPrevTrackEnabled = getPrevTrack(filterableTracks, 0) != null;
-    this._currentTrackIndex = 0;
     this._currentTrackMasterIndex = 0;
+    this._currentTrackIndex = 0;
     // this._filters = tagFilters;
   }
 
@@ -147,41 +147,63 @@ export class PlaylistService {
 
 
   setNextPrev() {
-    console.log("next tracks")
+    // console.log("next tracks here!")
     const nextTracks = this.visibleTracks.slice(this._currentTrackIndex + 1);
     console.log(nextTracks)
+    // console.log("STILL HERE")
     this._isNextTrackEnabled = this.nextTrackURL != null;
+    // console.log("STILL HERE 2")
+    // console.log("SET PREV TRACK ENABLED: " + (this.prevTrackURL != null))
     this._isPrevTrackEnabled = this.prevTrackURL != null;
     
   }
 
 
   get nextTrackURL(): string | null {
-    return getNextTrackURL(this.visibleTracks, this._currentTrackIndex)
+
+    return getNextTrackURL(this.tracks, this._currentTrackMasterIndex)
   }
   get prevTrackURL(): string | null {
-    return getPrevTrackURL(this.visibleTracks, this._currentTrackIndex)
+    // console.log("PREVIOSU:")
+    // const previousTracks = this.tracks.slice(0, this._currentTrackMasterIndex);
+    // const length = previousTracks.length;
+    // console.log("LENGTH: "+ length);
+    // const reverseIndex = previousTracks.reverse().findIndex(x => x.visible)
+
+    // console.log("index: "+ reverseIndex);
+    // if (reverseIndex < 0){
+    //   return null
+    // }
+    // console.log(Math.abs(reverseIndex - (length -1)))
+    // return  Math.abs(reverseIndex - length);
+    return getPrevTrackURL(this.tracks, this._currentTrackMasterIndex)
   }
   get nextTrack(): FilterableTrack | null {
-    return getNextTrack(this.visibleTracks, this._currentTrackIndex)
+    return getNextTrack(this.tracks, this._currentTrackMasterIndex)
   }
   get prevTrack(): FilterableTrack | null {
-    return getPrevTrack(this.visibleTracks, this._currentTrackIndex)
+
+    return getPrevTrack(this.tracks, this._currentTrackMasterIndex)
   }
 
   newURL(track: FilterableTrack ){
+    console.log("NEW URL: "+ track)
+    console.log("__________________________________________")
+
+    const index = this.tracks.findIndex(x => x == track);
+    if (index > -1) {
+      // console.log("MATCH 3?")
+      // console.log(index)
+      this._currentTrackMasterIndex = index;
+      // this._currentTrackIndex = visibleIndex;
+    }
+
+
     const visibleIndex = this.visibleTracks.findIndex(x => x == track);
     if (visibleIndex > -1) {
       // console.log("MATCH 2?")
       // console.log(visibleIndex)
       this.currentTrackIndex = visibleIndex;
-      // this._currentTrackIndex = visibleIndex;
-    }
-    const index = this.tracks.findIndex(x => x == track);
-    if (index > -1) {
-      console.log("MATCH 3?")
-      console.log(index)
-      this._currentTrackMasterIndex = index;
       // this._currentTrackIndex = visibleIndex;
     }
 
@@ -223,6 +245,19 @@ function getNextTrack(tracks: FilterableTrack[], currentIndex: number): Filterab
 }
 
 function getNextIndex(tracks: FilterableTrack[], currentIndex: number) : number | null {
+
+
+  const indexOffset = currentIndex + 1
+  const nextTracks = tracks.slice(indexOffset)
+  console.log("NEXT TRACK LENGTH: "+ nextTracks.length)
+  const nextIndex = nextTracks.findIndex(x => x.visible)
+  if (nextIndex < 0) {
+    console.log("NULL")
+    return null
+  }
+  const index = indexOffset + nextIndex
+  console.log("NEXT INDEX: " + index)
+  return index
   const nextTrackIndex = currentIndex + 1;
   if(nextTrackIndex < tracks.length){
     return nextTrackIndex
@@ -244,6 +279,7 @@ function getPrevTrackURL(tracks: FilterableTrack[], currentIndex: number): strin
 
 function getPrevTrack(tracks: FilterableTrack[], currentIndex: number): FilterableTrack | null {
   const prevTrackIndex = getPrevtIndex(tracks, currentIndex);
+  console.log(prevTrackIndex)
   if (prevTrackIndex != null){
     return tracks[prevTrackIndex]
   } 
@@ -251,9 +287,18 @@ function getPrevTrack(tracks: FilterableTrack[], currentIndex: number): Filterab
 }
 
 function getPrevtIndex(tracks: FilterableTrack[], currentIndex: number) : number | null {
-  const prevTrackIndex = currentIndex - 1;
-  if(prevTrackIndex > -1){
-    return prevTrackIndex
+
+  // console.log("PREVIOSU:")
+  const previousTracks = tracks.slice(0, currentIndex);
+  const length = previousTracks.length;
+  // console.log("LENGTH: "+ length);
+  const reverseIndex = previousTracks.reverse().findIndex(x => x.visible)
+
+  // console.log("reverse index: "+ reverseIndex);
+  if (reverseIndex < 0){
+    return null
   }
-  return null
+  const index = Math.abs(reverseIndex - (length -1))
+  // console.log("INDEX: " + index)
+  return index
 }
