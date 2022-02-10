@@ -158,7 +158,7 @@ export class AppComponent {
   // console.log(A);
 
 
-
+  
     const masterTracks = playlistService.tracks
         if (this.router.url === "/") {
           // this.router.navigate([masterTracks[0].url])
