@@ -23,20 +23,27 @@
         <!-- <li class="home"><button (click)="toggleHome()">HOME</button></li> -->
       </ul>
     </nav>
-  </div>
 
+
+    <div class="ipsBackground">
+
+    </div>
+
+    <button class="ipsButton {{this.mediaService.normalSpeed ? '' : 'fast'}}" (click)="toggleIPS()" >IPS</button>
+
+  </div>
   
   
 </div>
   
 <header id="contactInfo">
-  <h1>William Piotrowski</h1>
+  <h1>Bill Piotrowski</h1>
   <ul>
     <li>billpiotrowski@me.com</li>
     <li>216.287.6815</li>
   </ul>
   <div class="videoContainer">
-    <video #timerVideo src="/assets/video/timer.mp4"></video>
+    <video #timerVideo loop src="/assets/video/timer.mp4"></video>
   </div>
 </header>
 

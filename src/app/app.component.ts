@@ -146,12 +146,11 @@ export class AppComponent {
 
 
   @ViewChild('timerVideo') timerVideoRef!: ElementRef;
-
   constructor(
     private router: Router,
     // private injector: Injector,
     public playlistService: PlaylistService,
-    private mediaService: MediaService
+    public mediaService: MediaService
 
   ) { 
 
@@ -251,6 +250,10 @@ export class AppComponent {
 
   ngAfterViewInit() {
     this.mediaService.timerVideoPlayer = this.timerVideoRef.nativeElement
+  }
+
+  toggleIPS(){
+    this.mediaService.toggleSpeed()
   }
 }
 
