@@ -12,9 +12,20 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background: url(/assets/images/top.png);
+  background: url(/assets/images/dotted-bg.png) bottom center;
+  background: url(/assets/images/holes-bg.png) bottom center;
+  padding: 40px 80px 0;
+  box-sizing: border-box;
+  background-size: 1551.5px;
+  background-size: 100vw;
 
 }
+/* 
+@media only screen and (min-width: 1104px) {
+  .top {
+  }
+} */
+
 header#contactInfo {
   width: 100%;
   background: url(/assets/images/bottom.png);
@@ -24,7 +35,16 @@ header#contactInfo {
   bottom: 0;
   left: 0;
   z-index: 10;
-  height: 130px;
+  height: 160px;
+  background-size: 100vw;
+  box-sizing: border-box;
+  padding: 3vw 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+header#contactInfo h1 {
+  margin-bottom: .75rem;
 }
 
 .open-close-container {
@@ -43,12 +63,19 @@ header#contactInfo {
     width: 100%;
     /* height: 100%; */
     /* position: relative; */
-    position: absolute;
+    position: relative;
     height: 100%;
-    z-index: 1;
+    z-index: 31;
+    /* background: aqua; */
+  }
+  .mainContainer {
+    position: relative;
+    z-index: 31;
+    width: 100%;
+    height: 100%;
   }
 
-  #bg {
+  /* #bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -57,38 +84,54 @@ header#contactInfo {
     z-index: -1;
     overflow: scroll;
     background: url(/assets/images/top.png);
-  }
+  } */
   main {
     background: none;
   }
 
   nav#transport {
     position: absolute;
+    /* width: 100vw; */
     width: 100%;
     top: 0;
     background: black;
     height: 0;
+    left: 0;
     z-index: 10;
   }
   nav#transport li {
     position: absolute;
   }
   nav#transport li a {
-    background: orange;
     display: block;
   }
   nav#transport li.previous, nav#transport li.next {
-    top: 36vh
+    width: 80px;
+    height: 80px;
+    top: 36vh;
+    background: url(/assets/images/transport-buttons.png);
+    background-size: 200%;
   }
   nav#transport li.previous a, nav#transport li.next a {
-    width: 70px;
-    height: 100px;
+    /* width: 70px; */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-indent: -2000px;
   }
   nav#transport li.previous {
     left: 0;
   }
   nav#transport li.next {
     right: 0;
+  }
+  nav#transport li.previous {
+    background-position-x: -80px;
+    /* background: url(/assets/images/next.png) no-repeat right center; */
+  }
+  nav#transport li.disabled {
+    background-position-y: -80px;
+    /* background: url(/assets/images/next.png) no-repeat right center; */
   }
   nav#transport li.home {
     top: 0;

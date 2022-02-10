@@ -8,14 +8,17 @@
  -->
 
     <div id="main" [@routeAnimations]="prepareRoute(outlet)">
-      <router-outlet #outlet="outlet"></router-outlet>
+        <router-outlet #outlet="outlet"></router-outlet>
+
     </div>
     
     <nav id="transport">
       <ul>
         <!-- USE ROUTER LINK ACTIVE?? -->
-        <li class="previous"><a routerLinkActive="active" *ngIf="playlistService.isPrevTrackEnabled" routerLink="{{playlistService.prevTrackURL}}">Prev</a></li>
-        <li class="next"><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
+        <li class="previous {{playlistService.isPrevTrackEnabled ? 'enabled' : 'disabled'}}">
+          <a routerLinkActive="active" *ngIf="playlistService.isPrevTrackEnabled" routerLink="{{playlistService.prevTrackURL}}">Prev</a>
+        </li>
+        <li class="next {{playlistService.isNextTrackEnabled ? 'enabled' : 'disabled'}}"><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
         <li class="home"><a routerLink="/">Home</a></li>
         <!-- <li class="home"><button (click)="toggleHome()">HOME</button></li> -->
       </ul>
@@ -27,10 +30,11 @@
 </div>
   
 <header id="contactInfo">
-  William R Piotrowski <br />
-  1754 1⁄2 Lucretia Ave Los Angeles, CA 90026 <br />
-  216.287.6815 <br />
-  billpiotrowski@me.com
+  <h1>William Piotrowski</h1>
+  <ul>
+    <li>billpiotrowski@me.com</li>
+    <li>216.287.6815</li>
+  </ul>
 </header>
 
 <!-- 
