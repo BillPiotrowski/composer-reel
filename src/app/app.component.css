@@ -46,6 +46,19 @@ header#contactInfo {
 header#contactInfo h1 {
   margin-bottom: .75rem;
 }
+header#contactInfo .videoContainer {
+  /* background: lime; */
+  position: absolute;
+  width: 7.573316145665485vw;
+  height: 2.900418949403803vw;
+  left: 76.4743796326136vw;
+  top: 5.44634224943603vw;
+}
+header#contactInfo .videoContainer video {
+  width: 100%;
+  height: 100%
+}
+
 
 .open-close-container {
   position: absolute;

@@ -2,10 +2,12 @@
 </style>
 
 <div class="wrap">
+    <!-- <video autoplay muted playsinline #videoPlayer ></video> -->
+    <video #videoPlayer controls src="{{track.videoURL}}"></video>
     <h1>{{track.title}}</h1>
     <p>{{track.description}}</p>
     <ul class="tags">
         <li *ngFor="let tag of track.tagClasses">{{tag.title}}</li>
     </ul>
-    <video controls src="{{track.videoURL}}"></video>
+
 </div>

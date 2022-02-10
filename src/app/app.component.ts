@@ -32,7 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Track } from './playlist/track';
 import { animation, stagger, useAnimation, query, group, animateChild, sequence } from '@angular/animations';
-
+import { MediaService } from './media/media.service';
 
 
 
@@ -144,10 +144,14 @@ export class AppComponent {
   masterTracks: Track[]
   isOpen = false;
 
+
+  @ViewChild('timerVideo') timerVideoRef!: ElementRef;
+
   constructor(
     private router: Router,
     // private injector: Injector,
-    public playlistService: PlaylistService
+    public playlistService: PlaylistService,
+    private mediaService: MediaService
 
   ) { 
 
@@ -245,6 +249,9 @@ export class AppComponent {
   //   return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   // }
 
+  ngAfterViewInit() {
+    this.mediaService.timerVideoPlayer = this.timerVideoRef.nativeElement
+  }
 }
 
 

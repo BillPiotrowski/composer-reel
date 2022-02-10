@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 // import { Track } from '../app.component';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FilterableTrack, Track } from '../playlist/track';
 
 import { PlaylistService } from '../playlist/playlist.service';
+import { MediaService } from '../media/media.service';
 
 
 @Component({
@@ -14,10 +15,15 @@ import { PlaylistService } from '../playlist/playlist.service';
   styleUrls: ['./track.component.css']
 })
 export class TrackComponent implements OnInit {
+  @ViewChild('videoPlayer') videoPlayerRef!: ElementRef;
   
   track: FilterableTrack
 
-  public constructor(private playlistService: PlaylistService, private router:Router/*, private route:ActivatedRoute, */) {
+  public constructor(
+    private playlistService: PlaylistService,
+    private router:Router/*, private route:ActivatedRoute, */,
+    private mediaService: MediaService
+  ){
     // console.log(route.snapshot.data['test']);
     // console.log(router.url)
     // const tracks: Track[] = route.snapshot.data['test'];
@@ -30,6 +36,10 @@ export class TrackComponent implements OnInit {
 }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
+    this.mediaService.videoPlayer = this.videoPlayerRef.nativeElement
   }
 
 }
