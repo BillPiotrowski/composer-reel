@@ -1,71 +1,7 @@
 import { animation, style, animate, trigger, transition, stagger, useAnimation, query, group, animateChild, sequence } from '@angular/animations';
 
-import tracksJSON from './tracks.json'; 
-// import { Track } from './app.component';
-import { Track } from './playlist/track';
-// const tracks = tracksJSON.tracks.map(x => <Track>x)
-
-
-export const masterTracks = tracksJSON.tracks.map(x => <Track>x)
-
-const leftToArray = masterTracks.map(x => "* => LeftTo" + x.url)
-const leftToString = leftToArray.join(",")
-
-
-const rightToArray = masterTracks.map(x => "* => RightTo" + x.url)
-const rightToString = rightToArray.join(",")
-
-
-const transToLeft = [
-  query(':enter, :leave', [
-    style({
-      position: 'absolute',
-      top: 0,
-      left: 0,
-    })
-  ]),
-  query(':enter', [
-    style({
-      left: '100%',
-    })
-  ]),
-  query(':leave', animateChild(), {optional: true}),
-  group([
-    query(':leave', [
-      animate('300ms ease-out', style({ left: '-100%' }))
-    ], {optional: true}),
-    query(':enter', [
-      animate('300ms ease-out', style({ left: '0%' }))
-    ])
-  ]),
-  query(':enter', animateChild()),
-]
-
-
-const transToRight = [
-  query(':enter, :leave', [
-    style({
-      position: 'absolute',
-      top: 0,
-      left: '0%',
-    })
-  ]),
-  query(':enter', [
-    style({
-      left: '-100%',
-    })
-  ]),
-  query(':leave', animateChild(), {optional: true}),
-  group([
-    query(':leave', [
-      animate('300ms ease-out', style({ left: '100%' }))
-    ], {optional: true}),
-    query(':enter', [
-      animate('300ms ease-out', style({ left: '0%' }))
-    ])
-  ]),
-  query(':enter', animateChild()),
-]
+const transitionTime = 600
+const transitionString = transitionTime + 'ms ease-out'
 
 
 export const slideInAnimation =
@@ -82,7 +18,7 @@ export const slideInAnimation =
       ]),
       query(':leave', animateChild()),
         query(':enter', [
-          animate('600ms ease-out', style({ top: '0%' }))
+          animate(transitionString, style({ top: '0%' }))
         ]),
       query(':enter', animateChild()),
     ]),
@@ -98,10 +34,38 @@ export const slideInAnimation =
       ]),
       query(':leave', animateChild()),
         query(':leave', [
-          animate('600ms ease-out', style({ top: '-100%' }))
+          animate(transitionString, style({ top: '-100%' }))
         ]),
       query(':enter', animateChild()),
     ]),
-    transition(leftToString, transToLeft ),
-    transition(rightToString, transToRight ),
+    transition("* <=> *", [
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+        })
+      ], {optional: true}),
+      query(':enter', [
+        style({
+          left: '{{offsetEnter}}%',
+        })
+      ], {optional: true}),
+      query(":self", [
+    
+        style({
+          zIndex: '40',
+        })
+      ]),
+      query(':leave', animateChild(), {optional: true}),
+      group([
+        query(':leave', [
+          animate(transitionString, style({ left: '{{offsetLeave}}%' }))
+        ], {optional: true}),
+        query(':enter', [
+          animate(transitionString, style({ left: '0%' }))
+        ], {optional: true})
+      ]),
+      query(':enter', animateChild(), {optional: true}),
+    ] ),
   ]);

@@ -134,7 +134,7 @@ import { MediaService } from './media/media.service';
     //   transition('* => LeftToTrack', fadeIn),
     //   transition('TrackPage => Home', fadeIn)
     // ])
-  ]
+  ],
 })
 
 
@@ -218,30 +218,45 @@ export class AppComponent {
 	// }
 
   prepareRoute(outlet: RouterOutlet) {
-    const explicitAnimation = outlet?.activatedRouteData?.['animation']
-    if (explicitAnimation != null) {
-      return explicitAnimation
-    }
-
-    const previousTrackIndex = this.playlistService.previousTrackIndex
-    console.log("PREVIOUS TRACK NULL!" + previousTrackIndex + " NEW: " + this.playlistService.currentTrackIndex)
-    if (previousTrackIndex != null){
-      if (this.playlistService.currentTrackIndex >= previousTrackIndex) {
-        const trans = "LeftTo" + this.playlistService.tracks[this.playlistService.currentTrackIndex].url
-        console.log(trans)
-        return trans
-      } else {
-
-        const trans = "RightTo" + this.playlistService.tracks[this.playlistService.currentTrackIndex].url
-        console.log(trans)
-        return trans
+    // console.log("PREV TRACK INDEX: " + this.playlistService.previousTrackIndex)
+    const prev = this.playlistService.previousTrackIndex ?? 0
+    const cur = this.playlistService.currentTrackIndex
+    return {
+      value: outlet?.activatedRouteData?.['animation'],
+      params: {
+        offsetEnter: prev > cur ? -100 : 100,
+        offsetLeave: prev > cur ? 100 : -100,
       }
     }
-    // console.log("prepping route to!");
-    // console.log(outlet?.activatedRouteData?.['animation'])
-    // console.log("from:")
-    // console.log(this.playlistService.tracks[this.playlistService.currentTrackIndex].title)
     return outlet?.activatedRouteData?.['animation'];
+    // return {
+    //   // value: outlet.activatedRoute.snapshot.params.index
+    //   // value: "asdf"
+    // }
+    // const explicitAnimation = outlet?.activatedRouteData?.['animation']
+    // if (explicitAnimation != null) {
+    //   return explicitAnimation
+    // }
+
+    // const previousTrackIndex = this.playlistService.previousTrackIndex
+    // console.log("PREVIOUS TRACK NULL!" + previousTrackIndex + " NEW: " + this.playlistService.currentTrackIndex)
+    // if (previousTrackIndex != null){
+    //   if (this.playlistService.currentTrackIndex >= previousTrackIndex) {
+    //     const trans = "LeftTo" + this.playlistService.tracks[this.playlistService.currentTrackIndex].url
+    //     console.log(trans)
+    //     return trans
+    //   } else {
+
+    //     const trans = "RightTo" + this.playlistService.tracks[this.playlistService.currentTrackIndex].url
+    //     console.log(trans)
+    //     return trans
+    //   }
+    // }
+    // // console.log("prepping route to!");
+    // // console.log(outlet?.activatedRouteData?.['animation'])
+    // // console.log("from:")
+    // // console.log(this.playlistService.tracks[this.playlistService.currentTrackIndex].title)
+    // return outlet?.activatedRouteData?.['animation'];
   }
 
   // prepareRoute(outlet: RouterOutlet) {

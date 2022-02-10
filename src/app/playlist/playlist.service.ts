@@ -48,7 +48,7 @@ export class PlaylistService {
 
 
   private set currentTrackMasterIndex(val: number) {
-    this._previousTrackMasterIndex = this.currentTrackIndex
+    this._previousTrackMasterIndex = this._currentTrackMasterIndex
     this._currentTrackMasterIndex = val
     this.setNextPrev();
   }
@@ -64,7 +64,9 @@ export class PlaylistService {
   get previousTrackIndex(): number | null {
     const previousMasterIndex = this._previousTrackMasterIndex
     if (previousMasterIndex != null){
-      return this.visibleTracks.indexOf(this.tracks[previousMasterIndex])
+      const prevVisible = this.visibleTracks.indexOf(this.tracks[previousMasterIndex])
+      return ( prevVisible > -1 ) ? prevVisible : 0;
+      // return this.visibleTracks.indexOf(this.tracks[previousMasterIndex])
     }
     return null
   }

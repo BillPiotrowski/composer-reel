@@ -24,7 +24,7 @@ const routes: Route[] = [
 ]
 
 const trackRoutes: Route[] = tracksJSON.tracks.map(x => <Track>x).flatMap(x => [
-  { path: x.url, component: TrackComponent, data: {}  },
+  { path: x.url, component: TrackComponent, data: {animation: x.url}  },
   { path: '',   redirectTo: '/'+x.url, pathMatch: 'full' },
 ])
 
