@@ -57,6 +57,10 @@ export class PlaylistService {
     return this.tracks.filter(x=> x.visible)
   }
 
+  get currentTrack(): FilterableTrack {
+    return this.tracks[this._currentTrackMasterIndex]
+  }
+
   get currentTrackIndex(): number {
     // POTENTIAL FOR ERROR
     return this.visibleTracks.indexOf(this.tracks[this._currentTrackMasterIndex])

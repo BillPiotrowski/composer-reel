@@ -118,7 +118,7 @@ import { MediaService } from './media/media.service';
         // backgroundColor: 'yellow'
       })),
       state('closed', style({
-        top: '-100%',
+        top: '-100vh',
         // height: '100px',
         // opacity: 0.8,
         // backgroundColor: 'blue'
