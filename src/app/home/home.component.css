@@ -16,12 +16,19 @@
     z-index: 100;
     display: flex;
     flex-direction: row;
-}
-.wrap .content .trackContainer {
-    width: 50%;
+    gap: 6%;
 }
 .wrap .content .filterContainer {
-    width: 50%;
+    /* width: 46%; */
+    max-width: 20rem;
+}
+.wrap .content .trackContainer {
+    /* width: 46%; */
+}
+
+.filterContainer ul {
+    margin-bottom: 2rem;
+    background-position-x: -18.75rem;
 }
 .background {
 
@@ -51,6 +58,67 @@
     background-size: 100%;
 }
 
+.filterLabel, button.reset {
+    background: url(/assets/images/filter-label.png);
+    background-size: 37.5rem;
+    height: 1.625rem;
+    display: block;
+    overflow: hidden;
+    text-indent: -2000px;
+    margin-bottom: .5rem;
+}
+.filterLabel.enabled {
+    background-position-x: -18.75rem;
+}
+.filterLabel.disabled {
+    background-position-x: 0;
+}
+.filterLabel.collage {
+    width: 15.375rem;
+    transform: rotate(0.5deg);
+    margin-left: .75rem;
+}
+.filterLabel.filmScore {
+    width: 11.125rem;
+    background-position-y: -1.625rem;
+    transform: rotate(1deg);
+    margin-left: 1.5rem;
+}
+.filterLabel.orchestral {
+    width: 18.125rem;
+    background-position-y: -3.25rem;
+    transform: rotate(-1deg);
+    margin-left: .25rem;
+}
+.filterLabel.ondes {
+    width: 14.6875rem;
+    background-position-y: -4.875rem;
+    transform: rotate(-.75deg);
+    margin-left: .5rem;
+}
+
+
+
+button.reset {
+    background-position-x: -18.75rem;
+    width: 7.125rem;
+    background-position-y: -6.5rem;
+    transform: rotate(1deg);
+    margin-left: .25rem;
+}
+
+
+
+/* 
+{title: "Collage", tag: "collage", enabled: false },
+{title: "Film Score", tag: "filmScore", enabled: false },
+{title: "Orchestral Samples", tag: "orchestral", enabled: false },
+{title: "Ondes Martenot", tag: "ondes", enabled: false } */
+
+
+button {
+    border: none;
+}
 
 ul.tracks li span, ul.tracks li a {
     background: url(/assets/images/track-label.png);
@@ -60,9 +128,10 @@ ul.tracks li span, ul.tracks li a {
     overflow: hidden;
     text-indent: -2000px;
     margin-bottom: .5rem;
+    background-position-x: -18.75rem;
 }
 ul.tracks li span {
-    background-position-x: -18.75rem;
+    background-position-x: 0rem;
 }
 
 

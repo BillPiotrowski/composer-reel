@@ -1,5 +1,30 @@
 <div class="wrap">
     <div class="content">
+
+        <div class="filterContainer">
+            <h3>Filters:</h3>
+            <p>Select one or more filters from below to indicate which track on the right matches.</p>
+            <ul>
+                <li *ngFor="let filter of playlistService.filters">
+                    <button 
+                        (click)="this.playlistService.toggleFilter(filter.tag)"
+                        class="filterLabel {{filter.tag}} {{filter.enabled ? 'enabled' : 'disabled'}}"
+                    >{{filter.title}}</button>
+                </li>
+            </ul>
+
+            <button (click)="this.playlistService.clearFilter()" class="reset">
+                Reset
+            </button>
+            
+<br />
+<br />
+            <button (click)="close()">CLOSE</button>
+        </div>
+        <!-- <a routerLink="{{this.playlistService.recentPageOrAlt()}}" >HOME</a> -->
+
+
+
         <div class="trackContainer">
 
             <h3>All Demos</h3>
@@ -11,23 +36,6 @@
             </ul>
 
         </div>
-        <div class="filterContainer">
-
-            <h3>Filters</h3>
-            <ul>
-                <li *ngFor="let filter of playlistService.filters"><button (click)="this.playlistService.toggleFilter(filter.tag)">{{filter.title}}</button></li>
-
-            </ul>
-            <br />
-            <br />
-
-            <button (click)="this.playlistService.clearFilter()">Reset</button>
-            
-<br />
-<br />
-            <button (click)="close()">CLOSE</button>
-        </div>
-        <!-- <a routerLink="{{this.playlistService.recentPageOrAlt()}}" >HOME</a> -->
     </div>
 
     <div class="background">
