@@ -115,6 +115,7 @@ export class PlaylistService {
       for (var track of this.tracks ){
         track.visible = true;
       }
+      this.setNextPrev()
       return
     }
     for (var track of this.tracks){
@@ -127,6 +128,7 @@ export class PlaylistService {
         // else {  }
       }
     }
+    this.setNextPrev()
   }
 
   clearFilter(){
@@ -136,6 +138,7 @@ export class PlaylistService {
     for (var track of this.tracks ){
       track.visible = true;
     }
+    this.setNextPrev()
   }
 
 
