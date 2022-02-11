@@ -1,24 +1,32 @@
-<style>
-    .singleClass {
-        color: lime;
-    }
-</style>
 <div class="wrap">
     <div class="content">
+        <div class="trackContainer">
 
-        <h3>All Demos</h3>
-        <ul>
-            <li *ngFor="let track of playlistService.tracks">
-                <a (click)="toggleContainer()" routerLink="{{track.url}}" [ngClass]="{'singleClass' : track.visible}" >{{track.title}}</a>
-             </li>
-        </ul>
-        <h3>Filters</h3>
-        <ul>
-            <li *ngFor="let filter of playlistService.filters"><button (click)="this.playlistService.toggleFilter(filter.tag)">{{filter.title}}</button></li>
-        </ul>
-        <button (click)="this.playlistService.clearFilter()">Reset</button>
-    
-        <button (click)="close()">HOME</button>
+            <h3>All Demos</h3>
+            <ul class="tracks">
+                <li *ngFor="let track of playlistService.tracks" class="{{track.class}}">
+                    <span *ngIf="!track.visible" >{{track.title}}</span>
+                    <a *ngIf="track.visible" (click)="toggleContainer()" routerLink="{{track.url}}" >{{track.title}}</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="filterContainer">
+
+            <h3>Filters</h3>
+            <ul>
+                <li *ngFor="let filter of playlistService.filters"><button (click)="this.playlistService.toggleFilter(filter.tag)">{{filter.title}}</button></li>
+
+            </ul>
+            <br />
+            <br />
+
+            <button (click)="this.playlistService.clearFilter()">Reset</button>
+            
+<br />
+<br />
+            <button (click)="close()">CLOSE</button>
+        </div>
         <!-- <a routerLink="{{this.playlistService.recentPageOrAlt()}}" >HOME</a> -->
     </div>
 

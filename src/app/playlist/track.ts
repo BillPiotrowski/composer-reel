@@ -7,6 +7,7 @@ export interface Track {
     tags: string[]
     description: string
     videoFileName: string
+    class: string
 }
 
 export class FilterableTrack {
@@ -35,4 +36,5 @@ export class FilterableTrack {
     get description(): string { return this.track.description }
     get videoURL(): string { return "/assets/video/" + this.videoFileName }
     get videoFileName(): string { return this.track.videoFileName}
+    get class(): string { return this.track.class}
 }

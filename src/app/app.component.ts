@@ -35,6 +35,8 @@ import { animation, stagger, useAnimation, query, group, animateChild, sequence 
 import { MediaService } from './media/media.service';
 
 
+import { transitionString } from './animations'
+
 
 
 
@@ -124,10 +126,10 @@ import { MediaService } from './media/media.service';
         // backgroundColor: 'blue'
       })),
       transition('open => closed', [
-        animate('1s')
+        animate(transitionString)
       ]),
       transition('closed => open', [
-        animate('0.5s')
+        animate(transitionString)
       ]),
     ])
     // trigger('routeAnimations', [

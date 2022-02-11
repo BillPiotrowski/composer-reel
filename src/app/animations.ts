@@ -1,7 +1,7 @@
 import { animation, style, animate, trigger, transition, stagger, useAnimation, query, group, animateChild, sequence } from '@angular/animations';
 
-const transitionTime = 600
-const transitionString = transitionTime + 'ms ease-out'
+const transitionTime = 300
+export const transitionString = transitionTime + 'ms ease-out'
 
 
 export const slideInAnimation =

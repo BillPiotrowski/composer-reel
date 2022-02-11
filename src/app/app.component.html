@@ -21,7 +21,7 @@
         </li>
         <li class="next {{playlistService.isNextTrackEnabled ? 'enabled' : 'disabled'}}"><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
         <!-- <li class="home"><a routerLink="/">Home</a></li> -->
-        <li class="home"><button (click)="toggleHome()">HOME</button></li>
+        <li class="home"><button (click)="toggleHome()">All Tracks</button></li>
       </ul>
     </nav>
 
