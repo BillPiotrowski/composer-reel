@@ -57,3 +57,166 @@ table {
 
 /* 
  */
+body { 
+	font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+    border: none;
+}
+
+.trackLabel {
+    background: url(/assets/images/track-label.png);
+    background-size: 37.5rem;
+    height: 1.625rem;
+    display: block;
+    overflow: hidden;
+    text-indent: -2000px;
+    margin-bottom: .5rem;
+    background-position-x: -18.75rem;
+}
+.trackLabel.disabled {
+    background-position-x: 0rem;
+}
+
+
+
+.trackLabel.greyCardinal {
+    width: 17.375rem;
+    transform: rotate(-0.5deg);
+}
+.trackLabel.lonesomeTown {
+    background-position-y: -1.625rem;
+    width: 13.6875rem;
+    transform: rotate(1deg);
+    margin-left: .25rem;
+}
+.trackLabel.memory {
+    background-position-y: -3.25rem;
+    width: 7.3125rem;
+    transform: rotate(0.5deg);
+    margin-left: .75rem;
+}
+.trackLabel.songForTheRide {
+    background-position-y: -4.875rem;
+    width: 17.5rem;
+    transform: rotate(-1.25deg);
+    margin-left: 0rem;
+}
+.trackLabel.lionRises {
+    background-position-y: -6.5rem;
+    width: 14.625rem;
+    transform: rotate(-.75deg);
+    margin-left: .5rem;
+}
+.trackLabel.suckerPunch {
+    background-position-y: -8.125rem;
+    width: 13.375rem;
+    transform: rotate(1.5deg);
+    margin-left: 1rem;
+}
+.trackLabel.highway {
+    background-position-y: -9.75rem;
+    width: 11.25rem;
+    transform: rotate(-.5deg);
+    margin-left: 0rem;
+}
+.trackLabel.sprint {
+    background-position-y: -11.375rem;
+    width: 7.25rem;
+    transform: rotate(-1.25deg);
+    margin-left: .25rem;
+}
+.trackLabel.labyrinthOfDreams {
+    background-position-y: -13rem;
+    width: 18.75rem;
+    transform: rotate(1deg);
+    margin-left: 1.5rem;
+}
+.trackLabel.nightOfTheWolf {
+    background-position-y: -14.625rem;
+    width: 17.5rem;
+    transform: rotate(-.5deg);
+    margin-left: .75rem;
+}
+.trackLabel.ritual {
+    background-position-y: -17.875rem;
+    width: 7.625rem;
+    transform: rotate(-1deg);
+    margin-left: .25rem;
+}
+.trackLabel.waves {
+    background-position-y: -16.25rem;
+    width: 6.6875rem;
+    transform: rotate(.5deg);
+    margin-left: .5rem;
+}
+
+
+
+
+.filterLabel, button.reset {
+    background: url(/assets/images/filter-label.png);
+    background-size: 37.5rem;
+    height: 1.625rem;
+    display: block;
+    overflow: hidden;
+    text-indent: -2000px;
+    margin-bottom: .5rem;
+}
+.filterLabel.enabled {
+    background-position-x: -18.75rem;
+}
+.filterLabel.disabled {
+    background-position-x: 0;
+}
+.filterLabel.collage {
+    width: 15.375rem;
+    transform: rotate(0.5deg);
+    margin-left: .75rem;
+}
+.filterLabel.filmScore {
+    width: 11.125rem;
+    background-position-y: -1.625rem;
+    transform: rotate(1deg);
+    margin-left: 1.5rem;
+}
+.filterLabel.orchestral {
+    width: 18.125rem;
+    background-position-y: -3.25rem;
+    transform: rotate(-1deg);
+    margin-left: .25rem;
+}
+.filterLabel.ondes {
+    width: 14.6875rem;
+    background-position-y: -4.875rem;
+    transform: rotate(-.75deg);
+    margin-left: .5rem;
+}
+
+
+
+button.reset {
+    background-position-x: -18.75rem;
+    width: 7.125rem;
+    background-position-y: -6.5rem;
+    transform: rotate(1deg);
+    margin-left: .25rem;
+}

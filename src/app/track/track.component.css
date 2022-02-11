@@ -1,18 +1,54 @@
+:host{
+    width: 100%;
+    /* Fixes issue where margin bubbles up and is added to parent, causing a visible background color if app.component .container has a background color */
+    display: flow-root;
+    height: 100%;
+}
 
-    .wrap {
-        padding: 80px 120px;
-        /* width: 90%; */
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        box-sizing: border-box;
-        /* background: yellow; */
+.trackContainer {
+    /* padding: 80px 10rem; */
+    /* max-width: 1000px;
+    margin: 0 auto; */
+    /* width: 90%; */
+    /* position: absolute; */
+    z-index: -1;
+    width: 70%;
+    position: static;
+    /* width: 62.5rem; */
+    margin: 2rem auto 0;
+    box-sizing: border-box;
+    /* background: yellow; */
+    background: #fff;
+    display: flex;
+    gap: 4%;
+    height: 70%;
+    padding: 20px
+}
 
-    }
-    video {
-        width: 50%;
-        height: 300px;
-    }
-    :host{
-        width: 100%;
-     }
+.trackContainer .videoContainer {
+    width: 56%;
+}
+.trackContainer .content {
+    width: 38%;
+}
+
+.content h2 {
+    margin-bottom: 1.25rem;
+}
+.content .copy {
+    background: #fff;
+    padding: 1.5rem .75rem;
+    font-size: .75rem;
+    line-height: 1.5;
+}
+.content .filters {
+    margin-top: 1.5rem;
+}
+
+
+
+video {
+    width: 100%;
+    background: black;
+
+}

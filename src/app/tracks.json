@@ -21,14 +21,14 @@
             "url": "memory",
             "tags": ["ondes"],
             "description": "first line\nsecond line",
-            "videoFileName": "grey-cardinal.mp4",
+            "videoFileName": "memory.mp4",
             "class": "memory"
         },
         {
             "title": "The Lion Rises",
             "url": "the-lion-rises",
             "tags": ["filmScore", "orchestral"],
-            "description": "first line\nsecond line",
+            "description": "Cue from 2013 feature film, 'Crimson Winter'.",
             "videoFileName": "lion-rises.mp4",
             "class": "lionRises"
         },
@@ -36,7 +36,7 @@
             "title": "Train Tracks and Paintbrushes",
             "url": "traintracks",
             "tags": ["filmScore"],
-            "description": "first line\nsecond line",
+            "description": "Cue from 2017 feature film, 'What Separates Us'.",
             "videoFileName": "trains.mp4",
             "class": "suckerPunch"
         },
@@ -44,7 +44,7 @@
             "title": "Highway",
             "url": "highway",
             "tags": ["filmScore"],
-            "description": "first line\nsecond line",
+            "description": "Cue from 2017 feature film, 'What Separates Us'.",
             "videoFileName": "highway.mp4",
             "class": "highway"
         },
@@ -52,7 +52,7 @@
             "title": "Track",
             "url": "track",
             "tags": ["filmScore"],
-            "description": "first line\nsecond line",
+            "description": "Cue from 2017 feature film, 'What Separates Us'.",
             "videoFileName": "track.mp4",
             "class": "sprint"
         },
@@ -60,40 +60,48 @@
             "title": "Night of the Wolf",
             "url": "night-of-the-wolf",
             "tags": ["orchestral"],
-            "description": "first line\nsecond line",
-            "videoFileName": "grey-cardinal.mp4",
+            "description": "Track from 2005 album 'Transylvania'.",
+            "videoFileName": "night-of-the-wolf.mp4",
             "class": "nightOfTheWolf"
         },
         {
             "title": "Labyrinth of Dreams",
             "url": "labyrinth-of-dreams",
             "tags": ["orchestral"],
-            "description": "first line\nsecond line",
-            "videoFileName": "grey-cardinal.mp4",
+            "description": "Track from 2007 album 'Grimm Tales'.",
+            "videoFileName": "labyrinth.mp4",
             "class": "labyrinthOfDreams"
+        },
+        {
+            "title": "The High Seas",
+            "url": "the-high-seas",
+            "tags": ["orchestral"],
+            "description": "Track from 2008 album 'Phantoms of the High Seas'.",
+            "videoFileName": "high-seas.mp4",
+            "class": "highSeas"
         },
         {
             "title": "Song for the Ride",
             "url": "song-for-the-ride",
             "tags": ["collage"],
-            "description": "first line\nsecond line",
-            "videoFileName": "grey-cardinal.mp4",
+            "description": "Unreleased demo track.",
+            "videoFileName": "song-for-the-ride.mp4",
             "class": "songForTheRide"
         },
         {
             "title": "Ritual",
             "url": "ritual",
             "tags": ["collage"],
-            "description": "first line\nsecond line",
-            "videoFileName": "grey-cardinal.mp4",
+            "description": "Unreleased demo track.",
+            "videoFileName": "harpsi.mp4",
             "class": "ritual"
         },
         {
             "title": "Waves Controlling Waves",
             "url": "waves",
             "tags": ["ondes"],
-            "description": "first line\nsecond line",
-            "videoFileName": "grey-cardinal.mp4",
+            "description": "One of a series of demonstrations of multi-media performance. Audio affects picture in real time.",
+            "videoFileName": "waves.mp4",
             "class": "waves"
         }
     ]

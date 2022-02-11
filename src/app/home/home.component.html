@@ -29,9 +29,9 @@
 
             <h3>All Demos</h3>
             <ul class="tracks">
-                <li *ngFor="let track of playlistService.tracks" class="{{track.class}}">
-                    <span *ngIf="!track.visible" >{{track.title}}</span>
-                    <a *ngIf="track.visible" (click)="toggleContainer()" routerLink="{{track.url}}" >{{track.title}}</a>
+                <li *ngFor="let track of playlistService.tracks">
+                    <span *ngIf="!track.visible" class="trackLabel {{track.visible ? 'enabled' : 'disabled'}} {{track.class}}" >{{track.title}}</span>
+                    <a *ngIf="track.visible" (click)="toggleContainer()" routerLink="{{track.url}}" class="trackLabel {{track.visible ? 'enabled' : 'disabled'}} {{track.class}}" >{{track.title}}</a>
                 </li>
             </ul>
 

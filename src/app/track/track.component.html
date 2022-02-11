@@ -1,13 +1,18 @@
-<style>
-</style>
+<div class="trackContainer">
 
-<div class="wrap">
+    <div class="content">
+        <h2 class="trackLabel {{track.class}} enabled">{{track.title}}</h2>
+        <div class="copy">
+            <p>{{track.description}}</p>
+        </div>
+        <!-- <ul class="filters">
+            <li *ngFor="let filter of track.tagClasses" class="filterLabel disabled {{filter.tag}}">{{filter.title}}</li>
+        </ul> -->
+    </div>
+
     <!-- <video autoplay muted playsinline #videoPlayer ></video> -->
-    <video #videoPlayer controls src="{{track.videoURL}}"></video>
-    <h1>{{track.title}}</h1>
-    <p>{{track.description}}</p>
-    <ul class="tags">
-        <li *ngFor="let tag of track.tagClasses">{{tag.title}}</li>
-    </ul>
+    <div class="videoContainer">
+        <video #videoPlayer controls src="{{track.videoURL}}"></video>
+    </div>
 
 </div>

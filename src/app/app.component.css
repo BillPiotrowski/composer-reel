@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  padding-bottom: 160px;
+  padding-bottom: 130px;
   box-sizing: border-box;
 }
 .top{
@@ -67,7 +67,7 @@ header#contactInfo {
   bottom: 0;
   left: 0;
   z-index: 10;
-  height: 160px;
+  height: 130px;
   background-size: 100vw;
   box-sizing: border-box;
   padding: 3vw 20px 0;
