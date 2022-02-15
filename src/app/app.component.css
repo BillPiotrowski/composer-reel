@@ -244,7 +244,7 @@ header#contactInfo .videoContainer video {
   nav#transport li.previous, nav#transport li.next {
     width: 5rem;
     height: 5rem;
-    top: 36vh;
+    top: 46vh;
     background: url(/assets/images/transport-buttons.png);
     background-size: 200%;
   }
@@ -288,27 +288,6 @@ header#contactInfo .videoContainer video {
   }
   
 
-  /* @media only screen and (max-width: 56.25rem) {
-    nav#transport {
-      top: auto;
-      bottom: 0;
-      height: 5rem;
-      background: purple;
-
-      background: gray url(/assets/images/bottom.png) no-repeat top center;
-      background-size: 100vw;
-    }
-    nav#transport li.previous, nav#transport li.next {
-      bottom: 0;
-      top: auto;
-    }
-
-    nav#transport li.home {
-      top: auto;
-      bottom: 0;
-      left: 50%;
-    }
-  } */
 
 
   @media only screen and (max-width: 56.25rem) {

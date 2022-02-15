@@ -29,9 +29,10 @@ export class TrackComponent implements OnInit {
     // const tracks: Track[] = route.snapshot.data['test'];
     const track = playlistService.tracks.find((x) => { 
       return ('/' + x.url) == router.url
-    } )
+    } ) ?? playlistService.tracks[0]
+
     // I Don't like forcing this. Should throw an error!
-    this.track = track!
+    this.track = track
     console.log(track)
 }
 

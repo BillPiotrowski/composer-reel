@@ -20,7 +20,7 @@ export const masterTracks = tracksJSON.tracks.map(x => <Track>x)
 
 // Is parentheses required in definition?
 const routes: Route[] = [
-  { path: '', component: HomeComponent, data: {animation: 'Home'}  }
+  { path: '', component: TrackComponent, data: {animation: masterTracks[0].url}  }
 ]
 
 const trackRoutes: Route[] = tracksJSON.tracks.map(x => <Track>x).flatMap(x => [

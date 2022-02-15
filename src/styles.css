@@ -130,7 +130,7 @@ button {
     background-position-y: -8.125rem;
     width: 13.375rem;
     transform: rotate(1.5deg);
-    margin-left: 1rem;
+    margin-left: -0.5rem;
 }
 .trackLabel.highway {
     background-position-y: -9.75rem;
@@ -148,13 +148,13 @@ button {
     background-position-y: -13rem;
     width: 18.75rem;
     transform: rotate(1deg);
-    margin-left: 1.5rem;
+    margin-left: -.25rem;
 }
 .trackLabel.nightOfTheWolf {
     background-position-y: -14.625rem;
     width: 17.5rem;
     transform: rotate(-.5deg);
-    margin-left: .75rem;
+    margin-left: -0.3rem;
 }
 .trackLabel.ritual {
     background-position-y: -17.875rem;
@@ -166,7 +166,13 @@ button {
     background-position-y: -16.25rem;
     width: 6.6875rem;
     transform: rotate(.5deg);
-    margin-left: .5rem;
+    margin-left: .1rem;
+}
+.trackLabel.theHighSeas {
+    background-position-y: 75%;
+    width: 13.625rem;
+    transform: rotate(.5deg);
+    margin-left: -0.5rem;
 }
 
 
@@ -215,7 +221,7 @@ button {
 
 button.reset {
     background-position-x: -18.75rem;
-    width: 7.125rem;
+    width: 13.625rem;
     background-position-y: -6.5rem;
     transform: rotate(1deg);
     margin-left: .25rem;

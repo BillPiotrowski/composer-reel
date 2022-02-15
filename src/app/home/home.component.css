@@ -7,8 +7,21 @@
     padding: 4rem 6vw 0;
     box-sizing: border-box;
     color: #fff;
+    width: 76%;
+    max-width: 976rem;
+    margin: 0 auto;
+    position: relative;
 }
-.wrap .content {
+
+h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+p {
+    margin-bottom: 1rem;
+}
+
+.wrap article {
     width: 100%;
     height: 100%;
     position: relative;
@@ -17,13 +30,12 @@
     flex-direction: row;
     gap: 6%;
 }
-.wrap .content .filterContainer {
+.wrap article .filterContainer {
     /* width: 46%; */
     max-width: 20rem;
 }
-.wrap .content .trackContainer {
-    /* width: 46%; */
-}
+/* .wrap article .trackContainer {
+} */
 
 .filterContainer ul {
     margin-bottom: 2rem;
@@ -31,8 +43,8 @@
 }
 .background {
 
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     /* background: tan; */
     background: url(/assets/images/canvas.png);
     background: url(/assets/images/exterior-bg-bottom.png) no-repeat bottom center;
@@ -60,9 +72,42 @@
 
 
 
-/* 
-{title: "Collage", tag: "collage", enabled: false },
-{title: "Film Score", tag: "filmScore", enabled: false },
-{title: "Orchestral Samples", tag: "orchestral", enabled: false },
-{title: "Ondes Martenot", tag: "ondes", enabled: false } */
 
+@media only screen and (max-width: 56.25rem) {
+    .wrap article .trackContainer {
+        display: none;
+    }
+}
+
+
+
+
+
+
+.close {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 102;
+    background: purple;
+    margin-left: -7.375rem;
+}
+.close button {
+    background: url(/assets/images/all-tracks-button.png) no-repeat top center;
+    width: 14.75rem;
+    height: 1.9375rem;
+    display: block;
+    background-size: 14.75rem;
+    text-indent: -2000px;
+    overflow: hidden;
+    /* margin-left: -7.375rem; */
+    background-position-y: 100%;
+  }
+  @media only screen and (max-width: 56.25rem) {
+    .close {
+        top: auto;
+        bottom: 0;
+      }
+  }
+  
+  
