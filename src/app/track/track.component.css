@@ -12,37 +12,78 @@
     /* width: 90%; */
     /* position: absolute; */
     z-index: -1;
-    width: 70%;
     position: static;
     /* width: 62.5rem; */
-    margin: 2rem auto 0;
+    /* margin: 2rem auto 0; */
     box-sizing: border-box;
     /* background: yellow; */
     background: #fff;
-    display: flex;
     gap: 4%;
-    height: 70%;
-    padding: 20px
+    height: 100%;
+    padding: 2rem 3rem;
+    overflow-y: scroll;
+    overflow-x: visible;
 }
+
+/* 
+  .trackContainer header {
+      margin-bottom: 1.5rem;
+  } */
+
+header h2 {
+    margin: 0 auto;
+    display: block;
+}
+
+  .trackContainer section {
+    display: flex;
+  }
+
+  @media only screen and (max-width: 56.25rem) {
+
+    .trackContainer {
+        padding: 1rem 1rem;
+    }
+    .trackContainer section {
+        display: block;
+    }
+  }
+
+  .trackContainer h2 {
+      margin-left: 0;
+      margin: 0 auto 2rem;
+  }
 
 .trackContainer .videoContainer {
-    width: 56%;
+    order: 2;
+    /* width: 56%; */
 }
 .trackContainer .content {
-    width: 38%;
+    order: 1;
+    width: 18.75rem;
+    min-width: 18.75rem;
+    margin-right: 6%;
 }
 
-.content h2 {
-    margin-bottom: 1.25rem;
-}
 .content .copy {
     background: #fff;
-    padding: 1.5rem .75rem;
+    /* padding: 1.5rem .75rem; */
     font-size: .75rem;
     line-height: 1.5;
 }
 .content .filters {
     margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 56.25rem) {
+    .trackContainer .videoContainer, .trackContainer .content {
+        width: 100%;
+        margin: 0;
+        min-width: auto;
+    }
+    .trackContainer .content .copy {
+        overflow: hidden;
+    }
 }
 
 
@@ -52,3 +93,4 @@ video {
     background: black;
 
 }
+

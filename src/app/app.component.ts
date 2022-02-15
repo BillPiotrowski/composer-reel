@@ -226,8 +226,8 @@ export class AppComponent {
     return {
       value: outlet?.activatedRouteData?.['animation'],
       params: {
-        offsetEnter: prev > cur ? -100 : 100,
-        offsetLeave: prev > cur ? 100 : -100,
+        offsetEnter: prev > cur ? -200 : 200,
+        offsetLeave: prev > cur ? 200 : -200,
       }
     }
     return outlet?.activatedRouteData?.['animation'];

@@ -4,6 +4,18 @@
   </div>
 <div class="container">
 
+
+  <header id="contactInfo">
+    <h1>Bill Piotrowski</h1>
+    <ul>
+      <li>billpiotrowski@me.com</li>
+      <li>216.287.6815</li>
+    </ul>
+    <div class="videoContainer">
+      <video #timerVideo loop src="/assets/video/timer.mp4"></video>
+    </div>
+  </header>
+
   <div class="top">
     <!-- <div id="bg"></div> -->
 
@@ -21,7 +33,7 @@
         </li>
         <li class="next {{playlistService.isNextTrackEnabled ? 'enabled' : 'disabled'}}"><a *ngIf="playlistService.isNextTrackEnabled" routerLink="{{playlistService.nextTrackURL}}">Next</a></li>
         <!-- <li class="home"><a routerLink="/">Home</a></li> -->
-        <li class="home"><button (click)="toggleHome()">All Tracks</button></li>
+        <li class="home"><button (click)="toggleHome()" class="{{this.playlistService.isFiltered ? 'filtered' : ''}}">All Tracks</button></li>
       </ul>
     </nav>
 
@@ -37,16 +49,6 @@
   
 </div>
   
-<header id="contactInfo">
-  <h1>Bill Piotrowski</h1>
-  <ul>
-    <li>billpiotrowski@me.com</li>
-    <li>216.287.6815</li>
-  </ul>
-  <div class="videoContainer">
-    <video #timerVideo loop src="/assets/video/timer.mp4"></video>
-  </div>
-</header>
 
 <!-- 
 <main>

@@ -110,6 +110,10 @@ export class PlaylistService {
     return this._filters.filter(x=> x.enabled == true)
   }
 
+  get isFiltered(): boolean {
+    return this.enabledFilters.length > 0
+  }
+
   private applyFilters(){
     if (this.enabledFilters.length < 1){
       for (var track of this.tracks ){

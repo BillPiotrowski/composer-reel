@@ -57,7 +57,7 @@ table {
 
 /* 
  */
-body { 
+body, body * { 
 	font-family: 'Courier New', Courier, monospace;
 }
 
@@ -103,25 +103,25 @@ button {
     transform: rotate(-0.5deg);
 }
 .trackLabel.lonesomeTown {
-    background-position-y: -1.625rem;
+    background-position-y: 6.25%;
     width: 13.6875rem;
     transform: rotate(1deg);
     margin-left: .25rem;
 }
 .trackLabel.memory {
-    background-position-y: -3.25rem;
+    background-position-y: 12.5%;
     width: 7.3125rem;
     transform: rotate(0.5deg);
     margin-left: .75rem;
 }
 .trackLabel.songForTheRide {
-    background-position-y: -4.875rem;
+    background-position-y: 18.75%;
     width: 17.5rem;
     transform: rotate(-1.25deg);
     margin-left: 0rem;
 }
 .trackLabel.lionRises {
-    background-position-y: -6.5rem;
+    background-position-y: 25%;
     width: 14.625rem;
     transform: rotate(-.75deg);
     margin-left: .5rem;

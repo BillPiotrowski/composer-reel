@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  padding-bottom: 130px;
+  padding-bottom: 120px;
   box-sizing: border-box;
 }
 .top{
@@ -15,10 +15,21 @@
   background: url(/assets/images/dotted-bg.png) bottom center;
   background: url(/assets/images/holes-bg.png) bottom center;
   /* padding: 40px 80px 0; */
+  /* 7.5vw - Based on height of ips background rounded up. */
+  padding: 4rem 0 9vw;
   box-sizing: border-box;
   background-size: 1551.5px;
   background-size: 100vw;
 
+}
+
+@media only screen and (max-width: 56.25rem) {
+  .top {
+    padding: 1rem 0 9rem;
+  }
+  .container{
+    padding-bottom: 6rem;
+  }
 }
 
 .top .ipsBackground {
@@ -34,30 +45,29 @@ background: pink;
   left: 0;
 
 }
-.ipsButton {
-  position: absolute;
-    bottom: -4px;
-    left: 46.197228488559459vw;
-    width: 7.605543022881083vw;
-    height: 7.605543022881083vw;
-    /* margin-left: -3.802771511440541vh; */
-    /* background: blue; */
-    border: none;
-    text-indent: -2000px;
-    overflow: hidden;
-    background: url(/assets/images/ips-knob.png);
-    background-size: 200%;
-    z-index: 31;
-  }
-  .ipsButton.fast  {
-    background-position-x: -100%;
-  }
 /* 
 @media only screen and (min-width: 1104px) {
   .top {
   }
 } */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------- CONTACT SECTION ---------------------------- */
 header#contactInfo {
   width: 100%;
   background: gray url(/assets/images/bottom.png) no-repeat top center;
@@ -67,11 +77,10 @@ header#contactInfo {
   bottom: 0;
   left: 0;
   z-index: 10;
-  height: 130px;
+  height: 120px;
   background-size: 100vw;
   box-sizing: border-box;
-  padding: 3vw 20px 0;
-  font-family: 'Courier New', Courier, monospace;
+  padding: 1rem 3rem 0;
   font-size: 1rem;
   line-height: 1.2;
 }
@@ -90,6 +99,50 @@ header#contactInfo .videoContainer video {
   width: 100%;
   height: 100%
 }
+@media only screen and (max-width: 56.25rem) {
+  header#contactInfo{
+    height: 6rem;
+    padding: 1rem 1rem 0;
+  }
+
+}
+
+/* @media only screen and (max-width: 56.25rem) {
+  header#contactInfo{
+    position: static;
+    top: 0;
+    padding: 1rem 1rem;
+    background: #333;
+    height: auto;
+  }
+  header#contactInfo .videoContainer {
+    display: none;
+  }
+
+}
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .open-close-container {
@@ -103,17 +156,51 @@ header#contactInfo .videoContainer video {
 
 }
 
+
+
+
+
+
+
+
+/* ----------------------------- MAIN TRACK CONTENT ------------------- */
+
   #main{
-    /* background: lime; */
-    width: 100%;
+    width: 76%;
+    max-width: 976rem;
+    margin: 0 auto;
     /* height: 100%; */
     /* position: relative; */
     position: relative;
     height: 100%;
     z-index: 1;
+    /* background: #fff; */
     /* background: peachpuff; */
     /* background: aqua; */
   }
+
+
+  @media only screen and (max-width: 56.25rem) {
+    #main {
+        width: 90%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .mainContainer {
     position: relative;
     z-index: 31;
@@ -135,6 +222,9 @@ header#contactInfo .videoContainer video {
     background: none;
   }
 
+
+
+  /* ----------------------------- TRANSPORT NAV ------------------------------ */
   nav#transport {
     position: absolute;
     /* width: 100vw; */
@@ -152,8 +242,8 @@ header#contactInfo .videoContainer video {
     display: block;
   }
   nav#transport li.previous, nav#transport li.next {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     top: 36vh;
     background: url(/assets/images/transport-buttons.png);
     background-size: 200%;
@@ -183,4 +273,85 @@ header#contactInfo .videoContainer video {
     top: 0;
     left: 50%;
   }
+  nav#transport li.home button {
+    background: url(/assets/images/all-tracks-button.png) no-repeat top center;
+    width: 14.75rem;
+    height: 1.9375rem;
+    display: block;
+    background-size: 14.75rem;
+    text-indent: -2000px;
+    overflow: hidden;
+    margin-left: -7.375rem;
+  }
+  nav#transport li.home button.filtered {
+    background-position-y: -1.9375rem;
+  }
   
+
+  /* @media only screen and (max-width: 56.25rem) {
+    nav#transport {
+      top: auto;
+      bottom: 0;
+      height: 5rem;
+      background: purple;
+
+      background: gray url(/assets/images/bottom.png) no-repeat top center;
+      background-size: 100vw;
+    }
+    nav#transport li.previous, nav#transport li.next {
+      bottom: 0;
+      top: auto;
+    }
+
+    nav#transport li.home {
+      top: auto;
+      bottom: 0;
+      left: 50%;
+    }
+  } */
+
+
+  @media only screen and (max-width: 56.25rem) {
+    nav#transport {
+      top: auto;
+      bottom: 0;
+    }
+
+    nav#transport li.previous, nav#transport li.next {
+      top: auto;
+      bottom: 3rem;
+    }
+    nav#transport li.home {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+
+
+
+
+.ipsButton {
+  position: absolute;
+    bottom: -4px;
+    left: 46.197228488559459vw;
+    width: 7.605543022881083vw;
+    height: 7.605543022881083vw;
+    /* margin-left: -3.802771511440541vh; */
+    /* background: blue; */
+    border: none;
+    text-indent: -2000px;
+    overflow: hidden;
+    background: url(/assets/images/ips-knob.png);
+    background-size: 200%;
+    z-index: 31;
+  }
+  .ipsButton.fast  {
+    background-position-x: -100%;
+  }
+@media only screen and (max-width: 56.25rem) {
+
+  .ipsButton {
+    display: none;
+  }
+}
