@@ -4,49 +4,17 @@
             "title": "Grey Cardinal",
             "url": "grey-cardinal",
             "tags": ["collage"],
-            "description": "first line\nsecond line",
+            "description": "Remix of 2021 Collapsing Scenery track. Produced and mixed by Bill Piotrowski and Ryan Ross.",
             "videoFileName": "grey-cardinal.mp4",
             "class": "greyCardinal"
         },
         {
-            "title": "Lonesome Town",
-            "url": "lonesome-town",
+            "title": "Song for the Ride",
+            "url": "song-for-the-ride",
             "tags": ["collage"],
-            "description": "first line\nsecond line",
-            "videoFileName": "lonesome-town.mp4",
-            "class": "lonesomeTown"
-        },
-        {
-            "title": "Memory",
-            "url": "memory",
-            "tags": ["ondes"],
-            "description": "first line\nsecond line",
-            "videoFileName": "memory.mp4",
-            "class": "memory"
-        },
-        {
-            "title": "The Lion Rises",
-            "url": "the-lion-rises",
-            "tags": ["filmScore", "orchestral"],
-            "description": "Cue from 2013 feature film, 'Crimson Winter'.",
-            "videoFileName": "lion-rises.mp4",
-            "class": "lionRises"
-        },
-        {
-            "title": "Train Tracks and Paintbrushes",
-            "url": "traintracks",
-            "tags": ["filmScore"],
-            "description": "Cue from 2017 feature film, 'What Separates Us'.",
-            "videoFileName": "trains.mp4",
-            "class": "suckerPunch"
-        },
-        {
-            "title": "Highway",
-            "url": "highway",
-            "tags": ["filmScore"],
-            "description": "Cue from 2017 feature film, 'What Separates Us'.",
-            "videoFileName": "highway.mp4",
-            "class": "highway"
+            "description": "Unreleased demo for song by Ryan Ross. Produced by Bill Piotrowski and Ryan Ross.",
+            "videoFileName": "song-for-the-ride.mp4",
+            "class": "songForTheRide"
         },
         {
             "title": "Track",
@@ -57,10 +25,34 @@
             "class": "sprint"
         },
         {
+            "title": "Train Tracks and Paintbrushes",
+            "url": "traintracks",
+            "tags": ["filmScore"],
+            "description": "Cue from 2017 feature film, 'What Separates Us'.",
+            "videoFileName": "trains.mp4",
+            "class": "suckerPunch"
+        },
+        {
+            "title": "The Lion Rises",
+            "url": "the-lion-rises",
+            "tags": ["filmScore", "orchestral"],
+            "description": "WARNING: Graphic content. Cue from 2013 feature film, 'Crimson Winter'.",
+            "videoFileName": "lion-rises.mp4",
+            "class": "lionRises"
+        },
+        {
+            "title": "Lonesome Town",
+            "url": "lonesome-town",
+            "tags": ["collage"],
+            "description": "2020 cover of Lonesome Town with Z Berg. Produced by Bill Piotrowski and Ryan Ross.",
+            "videoFileName": "lonesome-town.mp4",
+            "class": "lonesomeTown"
+        },
+        {
             "title": "Night of the Wolf",
             "url": "night-of-the-wolf",
             "tags": ["orchestral"],
-            "description": "Track from 2005 album 'Transylvania'.",
+            "description": "Track from 2005 album 'Transylvania' by Nox Arcana. Composed by Bill Piotrowski and Joseph Vargo.",
             "videoFileName": "night-of-the-wolf.mp4",
             "class": "nightOfTheWolf"
         },
@@ -68,7 +60,7 @@
             "title": "Labyrinth of Dreams",
             "url": "labyrinth-of-dreams",
             "tags": ["orchestral"],
-            "description": "Track from 2007 album 'Grimm Tales'.",
+            "description": "Track from 2007 album 'Grimm Tales' by Nox Arcana. Composed by Bill Piotrowski and Joseph Vargo..",
             "videoFileName": "labyrinth.mp4",
             "class": "labyrinthOfDreams"
         },
@@ -76,17 +68,17 @@
             "title": "The High Seas",
             "url": "the-high-seas",
             "tags": ["orchestral"],
-            "description": "Track from 2008 album 'Phantoms of the High Seas'.",
+            "description": "Track from 2008 album 'Phantoms of the High Seas' by Nox Arcana. Composed by Bill Piotrowski and Joseph Vargo..",
             "videoFileName": "high-seas.mp4",
             "class": "theHighSeas"
         },
         {
-            "title": "Song for the Ride",
-            "url": "song-for-the-ride",
-            "tags": ["collage"],
-            "description": "Unreleased demo track.",
-            "videoFileName": "song-for-the-ride.mp4",
-            "class": "songForTheRide"
+            "title": "Memory",
+            "url": "memory",
+            "tags": ["ondes"],
+            "description": "2019 cover of You Can't Put Your Arms Around a Memory. Produced by Bill Piotrowski and Ryan Ross and Ondes Martenot performed by Bill Piotrowski.",
+            "videoFileName": "memory.mp4",
+            "class": "memory"
         },
         {
             "title": "Ritual",
@@ -100,7 +92,7 @@
             "title": "Waves Controlling Waves",
             "url": "waves",
             "tags": ["ondes"],
-            "description": "One of a series of demonstrations of multi-media performance. Audio affects picture in real time.",
+            "description": "One of a series of multi-media performances using a custom Reaktor patch that adjusts video playback based on live audio.",
             "videoFileName": "waves.mp4",
             "class": "waves"
         }
