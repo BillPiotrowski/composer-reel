@@ -89,7 +89,7 @@ p {
     left: 50%;
     top: 0;
     z-index: 102;
-    background: purple;
+    /* background: purple; */
     margin-left: -7.375rem;
 }
 .close button {
